@@ -1,0 +1,2979 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Creative Studio — Master Cinematic AI Video, Images & Storytelling</title>
+  <meta name="description" content="Learn how to use AI to create cinematic videos, photorealistic images, compelling stories, and viral content from zero. Hands-on practical cohort training." />
+  <meta name="keywords" content="AI video creation course, AI filmmaking, Runway Gen-3, Midjourney, AI content creation Nigeria, generative AI training" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#07090e',
+              surface: '#0d111a',
+              card: '#131826',
+              border: '#1f293d',
+              cyan: '#00f2fe',
+              blue: '#4facfe',
+              violet: '#7f00ff',
+              purple: '#b829dd',
+              emerald: '#10b981',
+              accent: '#38bdf8'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+          },
+          boxShadow: {
+            'glow-cyan': '0 0 25px -5px rgba(0, 242, 254, 0.4)',
+            'glow-violet': '0 0 30px -5px rgba(184, 41, 221, 0.35)',
+            'glow-blue': '0 0 20px -3px rgba(79, 172, 254, 0.45)'
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-8px)' }
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Custom scrollbars & glassmorphic utility styles */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #07090e;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #38bdf8;
+    }
+
+    .glass-card {
+      background: rgba(19, 24, 38, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card-hover {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card-hover:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 32px -8px rgba(0, 242, 254, 0.15);
+    }
+    .text-gradient {
+      background: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #b829dd 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .text-gradient-gold {
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .border-gradient {
+      border-image: linear-gradient(to right, #00f2fe, #b829dd) 1;
+    }
+    .grid-bg {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+    /* Pulsing ambient lights */
+    .radial-ambient-1 {
+      background: radial-gradient(circle at 50% 30%, rgba(0, 242, 254, 0.12) 0%, transparent 65%);
+    }
+    .radial-ambient-2 {
+      background: radial-gradient(circle at 80% 70%, rgba(184, 41, 221, 0.12) 0%, transparent 65%);
+    }
+  </style>
+</head>
+
+<body class="bg-[#07090e] text-slate-100 font-sans selection:bg-brand-cyan/30 selection:text-white antialiased overflow-x-hidden min-h-screen">
+
+  <div id="toast-container" class="fixed top-5 right-5 z-50 flex flex-col gap-3 pointer-events-none"></div>
+
+  <header id="main-header" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 bg-[#07090e]/85 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-cyan via-brand-blue to-brand-violet flex items-center justify-center p-[2px] shadow-glow-cyan transition-transform group-hover:scale-105">
+          <div class="w-full h-full bg-[#07090e] rounded-[10px] flex items-center justify-center">
+            <svg class="w-5 h-5 text-brand-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-bold text-lg tracking-wider text-white">AI CREATIVE</span>
+            <span class="text-xs px-2 py-0.5 rounded-full font-semibold uppercase bg-brand-cyan/15 text-brand-cyan border border-brand-cyan/30">STUDIO</span>
+          </div>
+          <span class="text-[10px] tracking-widest text-slate-400 block -mt-0.5">ACADEMY & PRODUCTION LAB</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-brand-cyan transition-colors">Overview</a>
+        <a href="#curriculum" class="hover:text-brand-cyan transition-colors">What You'll Learn</a>
+        <a href="#projects" class="hover:text-brand-cyan transition-colors">Projects</a>
+        <a href="#workflow" class="hover:text-brand-cyan transition-colors">Workflow</a>
+        <a href="#audience" class="hover:text-brand-cyan transition-colors">Who It's For</a>
+        <a href="#pricing" class="hover:text-brand-cyan transition-colors">Pricing</a>
+        <a href="#faq" class="hover:text-brand-cyan transition-colors">FAQ</a>
+      </nav>
+
+      <!-- Desktop Action & Switcher -->
+      <div class="hidden sm:flex items-center gap-3">
+        <!-- Admin quick portal toggle button -->
+        <button id="nav-admin-btn" onclick="toggleAdminModal()" class="px-3.5 py-2 text-xs font-semibold rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 border border-slate-700 hover:text-white transition flex items-center gap-1.5" title="Open Management Portal">
+          <svg class="w-3.5 h-3.5 text-brand-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+          Admin Portal
+        </button>
+
+        <a href="#register" class="relative group inline-flex items-center justify-center p-0.5 overflow-hidden rounded-xl font-medium text-sm transition-all duration-300 shadow-glow-cyan hover:shadow-cyan-400/50">
+          <span class="w-full h-full bg-gradient-to-r from-brand-cyan to-brand-violet group-hover:from-cyan-400 group-hover:to-purple-500 absolute inset-0"></span>
+          <span class="relative px-5 py-2 transition-all ease-out bg-[#07090e] rounded-[10px] group-hover:bg-opacity-0 font-semibold text-white flex items-center gap-2">
+            <span>JOIN THE CLASS</span>
+            <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="flex items-center gap-2 lg:hidden">
+        <button onclick="toggleAdminModal()" class="p-2 rounded-lg bg-slate-800/80 text-slate-300 text-xs flex items-center">
+          <svg class="w-4 h-4 text-brand-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+        </button>
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2.5 rounded-xl bg-slate-800/80 text-slate-300 hover:text-white focus:outline-none" aria-label="Toggle Navigation">
+          <svg id="menu-icon" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-drawer" class="hidden lg:hidden bg-[#0a0d16] border-b border-slate-800 px-6 py-5 space-y-4">
+      <nav class="flex flex-col space-y-3 text-base font-medium">
+        <a href="#about" onclick="closeMobileMenu()" class="text-slate-300 hover:text-brand-cyan py-1">Overview</a>
+        <a href="#curriculum" onclick="closeMobileMenu()" class="text-slate-300 hover:text-brand-cyan py-1">What You'll Learn</a>
+        <a href="#projects" onclick="closeMobileMenu()" class="text-slate-300 hover:text-brand-cyan py-1">Real Projects</a>
+        <a href="#workflow" onclick="closeMobileMenu()" class="text-slate-300 hover:text-brand-cyan py-1">Workflow Matrix</a>
+        <a href="#audience" onclick="closeMobileMenu()" class="text-slate-300 hover:text-brand-cyan py-1">Who It's For</a>
+        <a href="#pricing" onclick="closeMobileMenu()" class="text-slate-300 hover:text-brand-cyan py-1">Pricing Plans</a>
+        <a href="#faq" onclick="closeMobileMenu()" class="text-slate-300 hover:text-brand-cyan py-1">FAQ</a>
+      </nav>
+      <div class="pt-3 border-t border-slate-800 flex flex-col gap-3">
+        <a href="#register" onclick="closeMobileMenu()" class="w-full py-3 text-center rounded-xl bg-gradient-to-r from-brand-cyan to-brand-violet text-white font-semibold shadow-glow-cyan">
+          ENROLL IN CLASS NOW
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section id="hero" class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden grid-bg">
+    <!-- Ambient glowing backdrops -->
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[500px] radial-ambient-1 pointer-events-none"></div>
+    <div class="absolute top-1/3 -right-20 w-[500px] h-[500px] radial-ambient-2 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left: Copy & Conversions -->
+        <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+          <!-- Live Admissions Pill -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/90 border border-brand-cyan/40 shadow-sm backdrop-blur-md">
+            <span class="w-2 h-2 rounded-full bg-brand-cyan animate-ping"></span>
+            <span class="w-2 h-2 -ml-3.5 rounded-full bg-brand-cyan"></span>
+            <span class="text-xs font-semibold tracking-wider text-cyan-300 uppercase">✦ ADMISSIONS OPEN • NEXT COHORT ENROLLING</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-white">
+            TURN YOUR IDEAS INTO <br class="hidden sm:inline" />
+            <span class="text-gradient">AI-POWERED CREATIVE</span> CONTENT
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+            Learn how to use AI to create cinematic videos, photorealistic images, compelling story scripts, viral social reels, and high-paying client commercials — <strong class="text-white font-medium">even if you're starting from absolute zero.</strong>
+          </p>
+
+          <!-- Dual CTA Row -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#register" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-cyan via-brand-blue to-brand-violet text-white font-bold text-base shadow-glow-cyan hover:shadow-cyan-400/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 text-center flex items-center justify-center gap-2.5">
+              <span>JOIN THE AI CREATIVE STUDIO</span>
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+
+            <a href="#curriculum" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 font-semibold text-base border border-slate-700 hover:border-slate-500 transition-all duration-200 text-center flex items-center justify-center gap-2">
+              <svg class="w-5 h-5 text-brand-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+              <span>SEE WHAT YOU'LL LEARN</span>
+            </a>
+          </div>
+
+          <!-- Trust & Value Strip -->
+          <div class="pt-6 border-t border-slate-800/80 flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2 text-xs sm:text-sm font-medium text-slate-400">
+            <span class="flex items-center gap-1.5 text-slate-300">
+              <svg class="w-4 h-4 text-brand-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Beginner Friendly
+            </span>
+            <span class="flex items-center gap-1.5 text-slate-300">
+              <svg class="w-4 h-4 text-brand-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Practical Training
+            </span>
+            <span class="flex items-center gap-1.5 text-slate-300">
+              <svg class="w-4 h-4 text-brand-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Real Projects
+            </span>
+            <span class="flex items-center gap-1.5 text-slate-300">
+              <svg class="w-4 h-4 text-brand-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Portfolio Ready
+            </span>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Cinematic Reel Showcase -->
+        <div class="lg:col-span-5">
+          <div class="relative">
+            <!-- Neon Glow ring -->
+            <div class="absolute -inset-1.5 bg-gradient-to-r from-brand-cyan via-brand-blue to-brand-violet rounded-2xl blur-lg opacity-40 animate-pulse-slow"></div>
+
+            <div class="relative rounded-2xl glass-card overflow-hidden border border-slate-700/80 shadow-2xl">
+              <!-- Showcase Header / Simulated Video Player Bar -->
+              <div class="px-4 py-3 bg-[#0a0e1a] border-b border-slate-800 flex items-center justify-between text-xs">
+                <div class="flex items-center gap-2">
+                  <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                  <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+                  <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+                  <span class="ml-2 font-mono text-slate-400 text-[11px]" id="reel-title-display">CINEMATIC_REEL_01.MP4</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-brand-cyan/20 text-brand-cyan border border-brand-cyan/40">4K 60FPS</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/40" id="reel-tool-tag">Runway Gen-3</span>
+                </div>
+              </div>
+
+              <!-- Reel Visual Simulator with Aspect Ratio Container -->
+              <div class="relative aspect-video w-full overflow-hidden bg-black flex items-center justify-center group" id="reel-display-canvas">
+                <!-- Visual simulation layers -->
+                <div id="reel-bg" class="absolute inset-0 bg-cover bg-center transition-all duration-700 transform group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80');"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+
+                <!-- Center simulated play button -->
+                <button onclick="simulateReelPlayback()" class="relative z-10 w-16 h-16 rounded-full bg-brand-cyan/20 border border-brand-cyan backdrop-blur-md flex items-center justify-center text-brand-cyan hover:scale-110 active:scale-95 transition-all shadow-glow-cyan" title="Preview Reel">
+                  <svg class="w-8 h-8 translate-x-0.5 fill-current" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </button>
+
+                <!-- Prompt Badge Overlay -->
+                <div class="absolute bottom-3 left-3 right-3 z-10 bg-slate-950/80 backdrop-blur-md p-2.5 rounded-lg border border-slate-700/60 text-xs">
+                  <div class="flex items-center justify-between text-slate-400 text-[11px] mb-1">
+                    <span class="flex items-center gap-1 text-brand-cyan font-mono">
+                      <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                      PROMPT ARCHITECTURE
+                    </span>
+                    <span class="text-slate-400 font-mono" id="reel-ratio-display">16:9 • Anamorphic</span>
+                  </div>
+                  <p class="text-slate-200 line-clamp-2 italic font-mono text-[11px]" id="reel-prompt-display">
+                    "Hyper-realistic neo-tokyo cyberpunk street, anamorphic lens flare, rain reflections, volumetric steam, 35mm film grain, 8k render."
+                  </p>
+                </div>
+              </div>
+
+              <!-- Interactive Reel Switcher Tabs -->
+              <div class="p-2 bg-[#0c101d] grid grid-cols-4 gap-1.5 text-center text-xs font-medium">
+                <button onclick="switchReel(0)" id="reel-tab-0" class="reel-tab px-2 py-2 rounded-lg bg-brand-cyan/20 border border-brand-cyan/50 text-cyan-300 text-[11px] font-semibold transition">
+                  Sci-Fi Film
+                </button>
+                <button onclick="switchReel(1)" id="reel-tab-1" class="reel-tab px-2 py-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 text-[11px] hover:text-white transition">
+                  Consistent Hero
+                </button>
+                <button onclick="switchReel(2)" id="reel-tab-2" class="reel-tab px-2 py-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 text-[11px] hover:text-white transition">
+                  Perfume Ad
+                </button>
+                <button onclick="switchReel(3)" id="reel-tab-3" class="reel-tab px-2 py-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 text-[11px] hover:text-white transition">
+                  Documentary
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="py-20 bg-[#0a0d16] border-t border-b border-slate-800/80 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-brand-cyan">The Industry Revolution</h2>
+        <h3 class="text-3xl sm:text-4xl font-extrabold text-white">AI Is Changing Content Creation. Are You Ready?</h3>
+        <p class="text-slate-300 text-base leading-relaxed">
+          Traditional filmmaking and studio production used to lock out 99% of creators with massive camera budgets, heavy crews, and months of production delays. Today, one visionary with a laptop and modern AI workflows can produce cinema-grade assets in hours.
+        </p>
+      </div>
+
+      <!-- Side-by-side Matrix -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <!-- Traditional Way -->
+        <div class="rounded-2xl p-7 bg-red-950/10 border border-red-900/30 relative">
+          <div class="flex items-center justify-between mb-5">
+            <span class="text-xs font-bold uppercase tracking-wider text-red-400">Old Paradigm</span>
+            <span class="px-2.5 py-1 rounded bg-red-500/10 text-red-400 border border-red-500/20 text-xs font-semibold">Slow & Expensive</span>
+          </div>
+          <h4 class="text-xl font-bold text-slate-100 mb-4 flex items-center gap-2">
+            <svg class="w-6 h-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Traditional Content Creation
+          </h4>
+          <ul class="space-y-3.5 text-sm text-slate-300">
+            <li class="flex items-start gap-3">
+              <span class="text-red-400 font-bold mt-0.5">✕</span>
+              <span><strong>$5,000 to $50,000+</strong> in camera bodies, cine lenses, lighting kits, and studio rental fees.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-400 font-bold mt-0.5">✕</span>
+              <span>Requires huge production teams: gaffers, actors, location scouts, and visual effects artists.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-400 font-bold mt-0.5">✕</span>
+              <span>Weeks to months of post-production turnaround times for short commercials or video clips.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-400 font-bold mt-0.5">✕</span>
+              <span>Complex 3D software requiring years of technical mastery (Blender, Maya, Houdini).</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- AI-Powered Studio Way -->
+        <div class="rounded-2xl p-7 bg-brand-card/90 border border-brand-cyan/40 shadow-glow-cyan/20 relative">
+          <div class="flex items-center justify-between mb-5">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-cyan">The AI Studio Method</span>
+            <span class="px-2.5 py-1 rounded bg-brand-cyan/15 text-brand-cyan border border-brand-cyan/30 text-xs font-semibold">Fast & Scalable</span>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+            <svg class="w-6 h-6 text-brand-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            AI-Powered Creation (Our Training)
+          </h4>
+          <ul class="space-y-3.5 text-sm text-slate-200">
+            <li class="flex items-start gap-3">
+              <span class="text-brand-cyan font-bold mt-0.5">✓</span>
+              <span><strong>Zero camera gear:</strong> Just your computer, internet access, and browser-based AI models.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-cyan font-bold mt-0.5">✓</span>
+              <span><strong>Solo Creator Power:</strong> You act as director, cinematographer, screenwriter, voice actor, and editor.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-cyan font-bold mt-0.5">✓</span>
+              <span><strong>Rapid turnaround:</strong> Go from initial brainstorm to a polished 4K video asset within a single day.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-cyan font-bold mt-0.5">✓</span>
+              <span><strong>Beginner accessible:</strong> Master prompt engineering, camera motion prompts, and audio cloning intuitively.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Direct Quote Banner -->
+      <div class="mt-12 text-center p-6 max-w-3xl mx-auto rounded-xl bg-slate-900/60 border border-slate-800">
+        <p class="text-base sm:text-lg text-slate-300 font-medium">
+          "Today, one creative person can use AI to turn an idea into a complete visual experience."
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#07090e] border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-cyan">End-to-End Production Loop</span>
+        <h3 class="text-2xl sm:text-3xl font-bold text-white mt-1">The 7-Step Creative Pipeline You Will Master</h3>
+      </div>
+
+      <!-- Visual Step Nodes -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 text-center">
+        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-brand-cyan/40 transition">
+          <div class="w-8 h-8 mx-auto mb-2 rounded-full bg-cyan-500/10 text-brand-cyan flex items-center justify-center font-mono font-bold text-xs">01</div>
+          <div class="font-bold text-sm text-white">IDEA</div>
+          <div class="text-[11px] text-slate-400 mt-0.5">Concept & Hooks</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-brand-cyan/40 transition">
+          <div class="w-8 h-8 mx-auto mb-2 rounded-full bg-cyan-500/10 text-brand-cyan flex items-center justify-center font-mono font-bold text-xs">02</div>
+          <div class="font-bold text-sm text-white">SCRIPT</div>
+          <div class="text-[11px] text-slate-400 mt-0.5">LLM Storyboarding</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-brand-cyan/40 transition">
+          <div class="w-8 h-8 mx-auto mb-2 rounded-full bg-cyan-500/10 text-brand-cyan flex items-center justify-center font-mono font-bold text-xs">03</div>
+          <div class="font-bold text-sm text-white">IMAGE</div>
+          <div class="text-[11px] text-slate-400 mt-0.5">Photorealism Gen</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-brand-cyan/40 transition">
+          <div class="w-8 h-8 mx-auto mb-2 rounded-full bg-cyan-500/10 text-brand-cyan flex items-center justify-center font-mono font-bold text-xs">04</div>
+          <div class="font-bold text-sm text-white">CHARACTER</div>
+          <div class="text-[11px] text-slate-400 mt-0.5">Consistent Identity</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-brand-cyan/40 transition">
+          <div class="w-8 h-8 mx-auto mb-2 rounded-full bg-cyan-500/10 text-brand-cyan flex items-center justify-center font-mono font-bold text-xs">05</div>
+          <div class="font-bold text-sm text-white">VIDEO</div>
+          <div class="text-[11px] text-slate-400 mt-0.5">Cinematic Motion</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-brand-cyan/40 transition">
+          <div class="w-8 h-8 mx-auto mb-2 rounded-full bg-cyan-500/10 text-brand-cyan flex items-center justify-center font-mono font-bold text-xs">06</div>
+          <div class="font-bold text-sm text-white">EDITING</div>
+          <div class="text-[11px] text-slate-400 mt-0.5">Audio & Color Grade</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-brand-cyan/10 border border-brand-cyan/40 text-cyan-200">
+          <div class="w-8 h-8 mx-auto mb-2 rounded-full bg-brand-cyan text-slate-950 flex items-center justify-center font-mono font-bold text-xs">07</div>
+          <div class="font-bold text-sm text-white">PUBLISH</div>
+          <div class="text-[11px] text-cyan-300 mt-0.5">Clients & Social</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="curriculum" class="py-24 bg-[#0a0e19] relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-cyan">Structured Masterclass</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">What You'll Learn</h2>
+          <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-xl">
+            8 project-backed modules taking you from foundation prompting to complete client production delivery.
+          </p>
+        </div>
+        <a href="#register" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-cyan hover:text-cyan-300">
+          <span>Enroll in this syllabus</span>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+
+      <!-- 8-Module Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Module 1 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-brand-cyan/15 text-brand-cyan font-semibold border border-brand-cyan/30">MODULE 01</span>
+              <span class="text-xs text-slate-500">3 Lessons</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">AI Fundamentals</h3>
+            <p class="text-xs text-slate-300 mb-4">Master generative model foundations and prompt syntax logic without confusion.</p>
+            <ul class="text-xs text-slate-400 space-y-2 border-t border-slate-800/80 pt-3">
+              <li class="flex items-center gap-2">✓ GenAI core mechanisms</li>
+              <li class="flex items-center gap-2">✓ Multi-model selection</li>
+              <li class="flex items-center gap-2">✓ Weighted prompt syntax</li>
+            </ul>
+          </div>
+          <button onclick="toggleModuleDrawer(1)" class="mt-5 text-left text-xs font-semibold text-brand-cyan hover:underline flex items-center justify-between">
+            <span>View Syllabus</span>
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+        </div>
+
+        <!-- Module 2 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-brand-blue/15 text-brand-blue font-semibold border border-brand-blue/30">MODULE 02</span>
+              <span class="text-xs text-slate-500">4 Lessons</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">AI Image Mastery</h3>
+            <p class="text-xs text-slate-300 mb-4">Generate photorealistic cinematic scenes, controlled lighting, and commercial visuals.</p>
+            <ul class="text-xs text-slate-400 space-y-2 border-t border-slate-800/80 pt-3">
+              <li class="flex items-center gap-2">✓ Midjourney & Flux parameters</li>
+              <li class="flex items-center gap-2">✓ Lighting & lens aesthetics</li>
+              <li class="flex items-center gap-2">✓ Style reference codes (SREF)</li>
+            </ul>
+          </div>
+          <button onclick="toggleModuleDrawer(2)" class="mt-5 text-left text-xs font-semibold text-brand-cyan hover:underline flex items-center justify-between">
+            <span>View Syllabus</span>
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+        </div>
+
+        <!-- Module 3 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-brand-violet/20 text-purple-300 font-semibold border border-brand-violet/30">MODULE 03</span>
+              <span class="text-xs text-slate-500">5 Lessons</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">AI Video Creation</h3>
+            <p class="text-xs text-slate-300 mb-4">Text-to-video & image-to-video, camera motions, and frame consistency tricks.</p>
+            <ul class="text-xs text-slate-400 space-y-2 border-t border-slate-800/80 pt-3">
+              <li class="flex items-center gap-2">✓ Runway Gen-3, Kling, Veo</li>
+              <li class="flex items-center gap-2">✓ Camera pans, dollies & zooms</li>
+              <li class="flex items-center gap-2">✓ Multi-shot sequence stitching</li>
+            </ul>
+          </div>
+          <button onclick="toggleModuleDrawer(3)" class="mt-5 text-left text-xs font-semibold text-brand-cyan hover:underline flex items-center justify-between">
+            <span>View Syllabus</span>
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+        </div>
+
+        <!-- Module 4 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-300 font-semibold border border-emerald-500/30">MODULE 04</span>
+              <span class="text-xs text-slate-500">3 Lessons</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">AI Storytelling</h3>
+            <p class="text-xs text-slate-300 mb-4">From creative concepts and script architectures to visual shot lists and pacing.</p>
+            <ul class="text-xs text-slate-400 space-y-2 border-t border-slate-800/80 pt-3">
+              <li class="flex items-center gap-2">✓ 3-Act structure for AI shorts</li>
+              <li class="flex items-center gap-2">✓ Script-to-Storyboard workflows</li>
+              <li class="flex items-center gap-2">✓ Emotion & dramatic tension</li>
+            </ul>
+          </div>
+          <button onclick="toggleModuleDrawer(4)" class="mt-5 text-left text-xs font-semibold text-brand-cyan hover:underline flex items-center justify-between">
+            <span>View Syllabus</span>
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+        </div>
+
+        <!-- Module 5 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-brand-cyan/15 text-brand-cyan font-semibold border border-brand-cyan/30">MODULE 05</span>
+              <span class="text-xs text-slate-500">4 Lessons</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Character Consistency</h3>
+            <p class="text-xs text-slate-300 mb-4">Lock faces, outfits, and distinctive features across different scenes and angles.</p>
+            <ul class="text-xs text-slate-400 space-y-2 border-t border-slate-800/80 pt-3">
+              <li class="flex items-center gap-2">✓ Character Reference (CREF)</li>
+              <li class="flex items-center gap-2">✓ Face-swapping & refinement</li>
+              <li class="flex items-center gap-2">✓ Voice cloning & lip-sync</li>
+            </ul>
+          </div>
+          <button onclick="toggleModuleDrawer(5)" class="mt-5 text-left text-xs font-semibold text-brand-cyan hover:underline flex items-center justify-between">
+            <span>View Syllabus</span>
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+        </div>
+
+        <!-- Module 6 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-brand-blue/15 text-brand-blue font-semibold border border-brand-blue/30">MODULE 06</span>
+              <span class="text-xs text-slate-500">4 Lessons</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Content & Ads</h3>
+            <p class="text-xs text-slate-300 mb-4">Build viral TikTok/Reels hooks, YouTube documentary scenes, and commercial ads.</p>
+            <ul class="text-xs text-slate-400 space-y-2 border-t border-slate-800/80 pt-3">
+              <li class="flex items-center gap-2">✓ High-retention social hooks</li>
+              <li class="flex items-center gap-2">✓ 60-Second brand commercials</li>
+              <li class="flex items-center gap-2">✓ CapCut & Premiere sync</li>
+            </ul>
+          </div>
+          <button onclick="toggleModuleDrawer(6)" class="mt-5 text-left text-xs font-semibold text-brand-cyan hover:underline flex items-center justify-between">
+            <span>View Syllabus</span>
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+        </div>
+
+        <!-- Module 7 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-brand-violet/20 text-purple-300 font-semibold border border-brand-violet/30">MODULE 07</span>
+              <span class="text-xs text-slate-500">3 Lessons</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Full Creative Workflow</h3>
+            <p class="text-xs text-slate-300 mb-4">Seamlessly combine 6+ AI tools into one rapid studio assembly pipeline.</p>
+            <ul class="text-xs text-slate-400 space-y-2 border-t border-slate-800/80 pt-3">
+              <li class="flex items-center gap-2">✓ Tool interconnectivity</li>
+              <li class="flex items-center gap-2">✓ Upscaling to true 4K</li>
+              <li class="flex items-center gap-2">✓ AI Foley & sound design</li>
+            </ul>
+          </div>
+          <button onclick="toggleModuleDrawer(7)" class="mt-5 text-left text-xs font-semibold text-brand-cyan hover:underline flex items-center justify-between">
+            <span>View Syllabus</span>
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+        </div>
+
+        <!-- Module 8 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between border-brand-cyan/40">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 font-semibold border border-amber-500/30">MODULE 08</span>
+              <span class="text-xs text-slate-500">4 Lessons</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Monetizing AI Skills</h3>
+            <p class="text-xs text-slate-300 mb-4">Package your new capabilities into freelance services, agency retainers, and products.</p>
+            <ul class="text-xs text-slate-400 space-y-2 border-t border-slate-800/80 pt-3">
+              <li class="flex items-center gap-2">✓ Client pitch templates</li>
+              <li class="flex items-center gap-2">✓ Portfolio showcase secrets</li>
+              <li class="flex items-center gap-2">✓ Pricing AI video projects</li>
+            </ul>
+          </div>
+          <button onclick="toggleModuleDrawer(8)" class="mt-5 text-left text-xs font-semibold text-brand-cyan hover:underline flex items-center justify-between">
+            <span>View Syllabus</span>
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Module Details Modal/Drawer (Dynamic) -->
+  <div id="module-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+    <div class="bg-[#0f1422] border border-slate-700 max-w-lg w-full rounded-2xl p-6 shadow-2xl relative">
+      <button onclick="closeModuleModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+      <div id="module-modal-content"></div>
+    </div>
+  </div>
+
+  <section class="py-16 bg-[#07090e] border-t border-b border-slate-800/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-cyan">Industry-Standard Technology</span>
+        <h2 class="text-3xl font-bold text-white mt-1">Master The AI Creative Toolkit</h2>
+        <p class="text-sm text-slate-400 mt-2">
+          Tools may change as AI technology evolves. Our goal is to teach you transferable creative workflows and prompt architectures, not just a single software platform.
+        </p>
+      </div>
+
+      <!-- Tools Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+        <div class="glass-card rounded-xl p-4 flex flex-col items-center justify-center text-center group hover:border-brand-cyan/50 transition">
+          <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-brand-cyan mb-2 group-hover:scale-110 transition font-bold font-mono text-sm">GPT</div>
+          <span class="font-bold text-sm text-white">ChatGPT / Claude</span>
+          <span class="text-[11px] text-slate-400">Story & Script Engine</span>
+        </div>
+        <div class="glass-card rounded-xl p-4 flex flex-col items-center justify-center text-center group hover:border-brand-cyan/50 transition">
+          <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-brand-cyan mb-2 group-hover:scale-110 transition font-bold font-mono text-sm">MJ</div>
+          <span class="font-bold text-sm text-white">Midjourney v6</span>
+          <span class="text-[11px] text-slate-400">Cinematic Framing</span>
+        </div>
+        <div class="glass-card rounded-xl p-4 flex flex-col items-center justify-center text-center group hover:border-brand-cyan/50 transition">
+          <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-purple-400 mb-2 group-hover:scale-110 transition font-bold font-mono text-sm">RW</div>
+          <span class="font-bold text-sm text-white">Runway Gen-3</span>
+          <span class="text-[11px] text-slate-400">Motion & Physics</span>
+        </div>
+        <div class="glass-card rounded-xl p-4 flex flex-col items-center justify-center text-center group hover:border-brand-cyan/50 transition">
+          <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-brand-blue mb-2 group-hover:scale-110 transition font-bold font-mono text-sm">KL</div>
+          <span class="font-bold text-sm text-white">Kling AI</span>
+          <span class="text-[11px] text-slate-400">Complex Dynamics</span>
+        </div>
+        <div class="glass-card rounded-xl p-4 flex flex-col items-center justify-center text-center group hover:border-brand-cyan/50 transition">
+          <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-cyan-300 mb-2 group-hover:scale-110 transition font-bold font-mono text-sm">VEO</div>
+          <span class="font-bold text-sm text-white">Google Veo / Flow</span>
+          <span class="text-[11px] text-slate-400">Photoreal Sequences</span>
+        </div>
+        <div class="glass-card rounded-xl p-4 flex flex-col items-center justify-center text-center group hover:border-brand-cyan/50 transition">
+          <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-amber-400 mb-2 group-hover:scale-110 transition font-bold font-mono text-sm">LEO</div>
+          <span class="font-bold text-sm text-white">Leonardo AI</span>
+          <span class="text-[11px] text-slate-400">Canvas & ControlNet</span>
+        </div>
+        <div class="glass-card rounded-xl p-4 flex flex-col items-center justify-center text-center group hover:border-brand-cyan/50 transition">
+          <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-emerald-400 mb-2 group-hover:scale-110 transition font-bold font-mono text-sm">11L</div>
+          <span class="font-bold text-sm text-white">ElevenLabs</span>
+          <span class="text-[11px] text-slate-400">Voice Synthesis & Foley</span>
+        </div>
+        <div class="glass-card rounded-xl p-4 flex flex-col items-center justify-center text-center group hover:border-brand-cyan/50 transition">
+          <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-pink-400 mb-2 group-hover:scale-110 transition font-bold font-mono text-sm">CP</div>
+          <span class="font-bold text-sm text-white">CapCut Pro</span>
+          <span class="text-[11px] text-slate-400">Fast Assembly & Pacing</span>
+        </div>
+        <div class="glass-card rounded-xl p-4 flex flex-col items-center justify-center text-center group hover:border-brand-cyan/50 transition">
+          <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-blue-400 mb-2 group-hover:scale-110 transition font-bold font-mono text-sm">CV</div>
+          <span class="font-bold text-sm text-white">Canva</span>
+          <span class="text-[11px] text-slate-400">Thumbnails & Mockups</span>
+        </div>
+        <div class="glass-card rounded-xl p-4 flex flex-col items-center justify-center text-center group hover:border-brand-cyan/50 transition">
+          <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-cyan-400 mb-2 group-hover:scale-110 transition font-bold font-mono text-sm">PR</div>
+          <span class="font-bold text-sm text-white">Topaz / Upscalers</span>
+          <span class="text-[11px] text-slate-400">True 4K Clarification</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="py-24 bg-[#0a0d17] relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-cyan">Portfolio Over Theory</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">BUILD REAL PROJECTS — NOT JUST WATCH VIDEOS</h2>
+        <p class="text-slate-300 text-sm sm:text-base mt-2">
+          You don't graduate with notes. You graduate with a battle-tested AI creative portfolio ready to showcase to clients, audiences, and employers.
+        </p>
+      </div>
+
+      <!-- 6 Featured Project Blueprints -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div class="glass-card glass-card-hover rounded-2xl overflow-hidden flex flex-col justify-between border border-slate-800">
+          <div>
+            <div class="relative aspect-video overflow-hidden group">
+              <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=700&q=80" alt="Cinematic AI Short Film" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-black/70 backdrop-blur-md text-[10px] font-mono text-brand-cyan border border-brand-cyan/40">PROJECT 01</span>
+              <span class="absolute bottom-3 right-3 text-[11px] text-slate-300 font-mono">16:9 Cinema Scope</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-white mb-2">Cinematic AI Short Film</h3>
+              <p class="text-xs text-slate-300 mb-4">Write, direct, and produce a 90-second sci-fi or drama narrative film with custom sound scoring.</p>
+              <div class="flex flex-wrap gap-1.5 text-[10px] font-medium text-slate-400">
+                <span class="px-2 py-0.5 rounded bg-slate-800">Midjourney</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800">Runway Gen-3</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800">ElevenLabs</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-0">
+            <button onclick="openProjectModal(1)" class="w-full py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-xs font-semibold text-brand-cyan hover:text-white transition flex items-center justify-center gap-1.5 border border-slate-700">
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              <span>Inspect Project Blueprint</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="glass-card glass-card-hover rounded-2xl overflow-hidden flex flex-col justify-between border border-slate-800">
+          <div>
+            <div class="relative aspect-video overflow-hidden group">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80" alt="Consistent Hero Character" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-black/70 backdrop-blur-md text-[10px] font-mono text-brand-cyan border border-brand-cyan/40">PROJECT 02</span>
+              <span class="absolute bottom-3 right-3 text-[11px] text-slate-300 font-mono">1:1 & 9:16 Renders</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-white mb-2">Original Consistent AI Character</h3>
+              <p class="text-xs text-slate-300 mb-4">Design a digital avatar with lock-in facial features across 10 distinct emotive situations and wardrobes.</p>
+              <div class="flex flex-wrap gap-1.5 text-[10px] font-medium text-slate-400">
+                <span class="px-2 py-0.5 rounded bg-slate-800">Midjourney CREF</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800">FaceFusion</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800">Hedra</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-0">
+            <button onclick="openProjectModal(2)" class="w-full py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-xs font-semibold text-brand-cyan hover:text-white transition flex items-center justify-center gap-1.5 border border-slate-700">
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              <span>Inspect Project Blueprint</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="glass-card glass-card-hover rounded-2xl overflow-hidden flex flex-col justify-between border border-slate-800">
+          <div>
+            <div class="relative aspect-video overflow-hidden group">
+              <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=700&q=80" alt="60-Second AI Advertisement" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-black/70 backdrop-blur-md text-[10px] font-mono text-brand-cyan border border-brand-cyan/40">PROJECT 03</span>
+              <span class="absolute bottom-3 right-3 text-[11px] text-slate-300 font-mono">Commercial Grade</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-white mb-2">60-Second AI Brand Commercial</h3>
+              <p class="text-xs text-slate-300 mb-4">Produce a commercial-grade product reveal ad (luxury watch, perfume, beverage, or tech gadget).</p>
+              <div class="flex flex-wrap gap-1.5 text-[10px] font-medium text-slate-400">
+                <span class="px-2 py-0.5 rounded bg-slate-800">Kling AI</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800">CapCut Pro</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800">Sound FX</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-0">
+            <button onclick="openProjectModal(3)" class="w-full py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-xs font-semibold text-brand-cyan hover:text-white transition flex items-center justify-center gap-1.5 border border-slate-700">
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              <span>Inspect Project Blueprint</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="glass-card glass-card-hover rounded-2xl overflow-hidden flex flex-col justify-between border border-slate-800">
+          <div>
+            <div class="relative aspect-video overflow-hidden group">
+              <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=700&q=80" alt="AI YouTube Documentary" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-black/70 backdrop-blur-md text-[10px] font-mono text-brand-cyan border border-brand-cyan/40">PROJECT 04</span>
+              <span class="absolute bottom-3 right-3 text-[11px] text-slate-300 font-mono">Faceless YouTube</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-white mb-2">Automated AI YouTube Video</h3>
+              <p class="text-xs text-slate-300 mb-4">Build high-retention history or mystery mini-documentaries using dynamic camera zooms and voiceovers.</p>
+              <div class="flex flex-wrap gap-1.5 text-[10px] font-medium text-slate-400">
+                <span class="px-2 py-0.5 rounded bg-slate-800">ChatGPT</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800">ElevenLabs</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800">Luma Dream</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-0">
+            <button onclick="openProjectModal(4)" class="w-full py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-xs font-semibold text-brand-cyan hover:text-white transition flex items-center justify-center gap-1.5 border border-slate-700">
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              <span>Inspect Project Blueprint</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="glass-card glass-card-hover rounded-2xl overflow-hidden flex flex-col justify-between border border-slate-800">
+          <div>
+            <div class="relative aspect-video overflow-hidden group">
+              <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=700&q=80" alt="Viral Social Media Campaign" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-black/70 backdrop-blur-md text-[10px] font-mono text-brand-cyan border border-brand-cyan/40">PROJECT 05</span>
+              <span class="absolute bottom-3 right-3 text-[11px] text-slate-300 font-mono">9:16 Vertical Viral</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-white mb-2">AI Social Media Campaign</h3>
+              <p class="text-xs text-slate-300 mb-4">A 5-part multi-post viral storytelling series for TikTok, Instagram Reels, and YouTube Shorts.</p>
+              <div class="flex flex-wrap gap-1.5 text-[10px] font-medium text-slate-400">
+                <span class="px-2 py-0.5 rounded bg-slate-800">CapCut</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800">Runway</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800">Auto Captions</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-0">
+            <button onclick="openProjectModal(5)" class="w-full py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-xs font-semibold text-brand-cyan hover:text-white transition flex items-center justify-center gap-1.5 border border-slate-700">
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              <span>Inspect Project Blueprint</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="glass-card glass-card-hover rounded-2xl overflow-hidden flex flex-col justify-between border border-slate-800">
+          <div>
+            <div class="relative aspect-video overflow-hidden group">
+              <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=700&q=80" alt="Cinematic Story World" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-black/70 backdrop-blur-md text-[10px] font-mono text-brand-cyan border border-brand-cyan/40">PROJECT 06</span>
+              <span class="absolute bottom-3 right-3 text-[11px] text-slate-300 font-mono">Worldbuilding IP</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-white mb-2">Cinematic Story World & Pitch Deck</h3>
+              <p class="text-xs text-slate-300 mb-4">Develop a comprehensive visual IP universe with environment bibles and a client pitch deck.</p>
+              <div class="flex flex-wrap gap-1.5 text-[10px] font-medium text-slate-400">
+                <span class="px-2 py-0.5 rounded bg-slate-800">Midjourney</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800">Canva Deck</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800">Prompt Bible</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-0">
+            <button onclick="openProjectModal(6)" class="w-full py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-xs font-semibold text-brand-cyan hover:text-white transition flex items-center justify-center gap-1.5 border border-slate-700">
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              <span>Inspect Project Blueprint</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects Section CTA -->
+      <div class="mt-14 text-center">
+        <a href="#register" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-brand-cyan to-brand-violet text-white font-bold text-sm shadow-glow-cyan hover:scale-105 transition">
+          <span>I WANT TO BUILD THESE PROJECTS</span>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Details Modal -->
+  <div id="project-inspect-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+    <div class="bg-[#0f1422] border border-slate-700 max-w-2xl w-full rounded-2xl p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+      <button onclick="closeProjectModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+      <div id="project-inspect-content"></div>
+    </div>
+  </div>
+
+  <section id="workflow" class="py-24 bg-[#07090e] border-t border-slate-800/80 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-cyan">The Transformation Machine</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">FROM SIMPLE IDEA TO CINEMATIC CREATION</h2>
+        <p class="text-slate-300 text-sm sm:text-base mt-2">
+          Click through each stage to witness how raw thoughts are engineered into studio-grade deliverables.
+        </p>
+      </div>
+
+      <!-- Transformation Interactive Stage Stepper -->
+      <div class="max-w-4xl mx-auto glass-card rounded-2xl p-6 sm:p-8 border border-slate-800">
+        <!-- Step Navigation Pill row -->
+        <div class="grid grid-cols-3 sm:grid-cols-6 gap-2 mb-8">
+          <button onclick="setWorkflowStep(1)" id="wf-btn-1" class="wf-step-btn py-2 px-3 rounded-lg text-xs font-bold font-mono transition bg-brand-cyan text-slate-950">1. IDEA</button>
+          <button onclick="setWorkflowStep(2)" id="wf-btn-2" class="wf-step-btn py-2 px-3 rounded-lg text-xs font-bold font-mono transition bg-slate-800 text-slate-400 hover:text-white">2. PROMPT</button>
+          <button onclick="setWorkflowStep(3)" id="wf-btn-3" class="wf-step-btn py-2 px-3 rounded-lg text-xs font-bold font-mono transition bg-slate-800 text-slate-400 hover:text-white">3. IMAGE</button>
+          <button onclick="setWorkflowStep(4)" id="wf-btn-4" class="wf-step-btn py-2 px-3 rounded-lg text-xs font-bold font-mono transition bg-slate-800 text-slate-400 hover:text-white">4. MOTION</button>
+          <button onclick="setWorkflowStep(5)" id="wf-btn-5" class="wf-step-btn py-2 px-3 rounded-lg text-xs font-bold font-mono transition bg-slate-800 text-slate-400 hover:text-white">5. AUDIO</button>
+          <button onclick="setWorkflowStep(6)" id="wf-btn-6" class="wf-step-btn py-2 px-3 rounded-lg text-xs font-bold font-mono transition bg-slate-800 text-slate-400 hover:text-white">6. MASTER</button>
+        </div>
+
+        <!-- Dynamic Content Card -->
+        <div id="workflow-card-body" class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-[#0a0e19] p-6 rounded-xl border border-slate-800/80 min-h-[340px]">
+          <!-- Injected via setWorkflowStep(1) -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="audience" class="py-24 bg-[#0a0d17] relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-cyan">Tailored For Growth</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">WHO SHOULD JOIN AI CREATIVE STUDIO?</h2>
+        <p class="text-slate-300 text-sm sm:text-base mt-3">
+          You don't need to be a filmmaker, 3D animator, or AI engineer. This academy is engineered to give non-technical creators supernatural production velocity.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- 1. Content Creators & YouTubers -->
+        <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-cyan/40 transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-cyan/15 text-brand-cyan flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">Content Creators & YouTubers</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">Publish high-concept videos, captivating faceless channels, and cinematic B-roll without camera crews.</p>
+        </div>
+
+        <!-- 2. Social Media & Marketers -->
+        <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-blue/40 transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-blue/15 text-brand-blue flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">Social Media Managers & Agencies</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">Differentiate client offerings with custom AI characters, brand commercials, and scroll-stopping ads.</p>
+        </div>
+
+        <!-- 3. Designers & Filmmakers -->
+        <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-violet/40 transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-violet/20 text-purple-400 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">Filmmakers & Visual Designers</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">Pitch visual treatments in photorealistic 4K and rapidly prototype movie concepts in days, not months.</p>
+        </div>
+
+        <!-- 4. Freelancers & Entrepreneurs -->
+        <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-emerald-500/40 transition">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">Freelancers & Side-Hustlers</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">Monetize modern AI creative skills with local businesses, global Upwork clients, and digital deliverables.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-[#07090e] border-t border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-cyan">Practical Outputs</span>
+        <h2 class="text-3xl font-extrabold text-white mt-1">WHAT YOU'LL BE ABLE TO CREATE</h2>
+        <p class="text-xs sm:text-sm text-slate-400 mt-2">Every asset type your audience or future clients will eagerly pay for.</p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="glass-card p-5 rounded-xl border border-slate-800 text-center flex flex-col items-center">
+          <span class="text-3xl mb-2">🎬</span>
+          <span class="font-bold text-sm text-white">AI Short Films</span>
+          <span class="text-[11px] text-slate-400 mt-1">Narrative storytelling & trailers</span>
+        </div>
+        <div class="glass-card p-5 rounded-xl border border-slate-800 text-center flex flex-col items-center">
+          <span class="text-3xl mb-2">🎥</span>
+          <span class="font-bold text-sm text-white">Cinematic Videos</span>
+          <span class="text-[11px] text-slate-400 mt-1">4K camera movements & transitions</span>
+        </div>
+        <div class="glass-card p-5 rounded-xl border border-slate-800 text-center flex flex-col items-center">
+          <span class="text-3xl mb-2">🎨</span>
+          <span class="font-bold text-sm text-white">Photoreal Art</span>
+          <span class="text-[11px] text-slate-400 mt-1">Commercial illustrations & covers</span>
+        </div>
+        <div class="glass-card p-5 rounded-xl border border-slate-800 text-center flex flex-col items-center">
+          <span class="text-3xl mb-2">👤</span>
+          <span class="font-bold text-sm text-white">Consistent Characters</span>
+          <span class="text-[11px] text-slate-400 mt-1">Avatars across multiple scene angles</span>
+        </div>
+        <div class="glass-card p-5 rounded-xl border border-slate-800 text-center flex flex-col items-center">
+          <span class="text-3xl mb-2">📱</span>
+          <span class="font-bold text-sm text-white">Viral Reels & Shorts</span>
+          <span class="text-[11px] text-slate-400 mt-1">High retention hooks & sound FX</span>
+        </div>
+        <div class="glass-card p-5 rounded-xl border border-slate-800 text-center flex flex-col items-center">
+          <span class="text-3xl mb-2">📢</span>
+          <span class="font-bold text-sm text-white">Brand Advertisements</span>
+          <span class="text-[11px] text-slate-400 mt-1">Compelling product showcases</span>
+        </div>
+        <div class="glass-card p-5 rounded-xl border border-slate-800 text-center flex flex-col items-center">
+          <span class="text-3xl mb-2">📖</span>
+          <span class="font-bold text-sm text-white">Visual Stories</span>
+          <span class="text-[11px] text-slate-400 mt-1">E-books, comics & storyboards</span>
+        </div>
+        <div class="glass-card p-5 rounded-xl border border-slate-800 text-center flex flex-col items-center">
+          <span class="text-3xl mb-2">▶️</span>
+          <span class="font-bold text-sm text-white">YouTube Content</span>
+          <span class="text-[11px] text-slate-400 mt-1">Automated faceless productions</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-[#090d16] relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Live Dynamic Stats from Admin -->
+      <div class="glass-card rounded-2xl p-8 border border-slate-800/90 shadow-2xl mb-16">
+        <div class="text-center mb-8">
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-cyan">Cohort Traction</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">JOIN A COMMUNITY OF CREATORS BUILDING WITH AI</h2>
+          <p class="text-xs text-slate-400 mt-1">Live metrics updated directly from student enrollment and submissions.</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div class="border-r border-slate-800/80 last:border-0">
+            <div id="stat-students" class="text-3xl sm:text-4xl font-extrabold text-brand-cyan font-mono">148+</div>
+            <div class="text-xs sm:text-sm text-slate-300 font-medium mt-1">Enrolled Students</div>
+          </div>
+          <div class="border-r border-slate-800/80 last:border-0">
+            <div id="stat-projects" class="text-3xl sm:text-4xl font-extrabold text-brand-blue font-mono">310+</div>
+            <div class="text-xs sm:text-sm text-slate-300 font-medium mt-1">Projects Completed</div>
+          </div>
+          <div class="border-r border-slate-800/80 last:border-0">
+            <div id="stat-countries" class="text-3xl sm:text-4xl font-extrabold text-purple-400 font-mono">12</div>
+            <div class="text-xs sm:text-sm text-slate-300 font-medium mt-1">Countries & Hubs</div>
+          </div>
+          <div>
+            <div id="stat-rating" class="text-3xl sm:text-4xl font-extrabold text-amber-400 font-mono">4.9 / 5</div>
+            <div class="text-xs sm:text-sm text-slate-300 font-medium mt-1">Student Satisfaction</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonials Section -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-cyan">Honest Feedback</span>
+        <h2 class="text-3xl font-extrabold text-white mt-1">WHAT OUR STUDENTS ARE SAYING</h2>
+        <p class="text-xs sm:text-sm text-slate-400 mt-2">
+          Genuine feedback from verified creators. Administrators can easily update or add verified cohort testimonials through the Admin Portal.
+        </p>
+      </div>
+
+      <!-- Dynamic Testimonial Cards Container -->
+      <div id="testimonials-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Injected dynamically via JS with fallback structure -->
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-[#07090e] border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-cyan">The Roadmap</span>
+        <h2 class="text-3xl font-extrabold text-white mt-1">HOW THE TRAINING WORKS</h2>
+        <p class="text-xs sm:text-sm text-slate-400 mt-2">A clear, step-by-step pathway from complete beginner to published AI creator.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div class="glass-card rounded-xl p-5 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono font-bold text-brand-cyan">STEP 01</span>
+            <h4 class="font-bold text-white text-sm mt-1 mb-2">Register</h4>
+            <p class="text-xs text-slate-400">Lock your seat in the upcoming cohort and join our creator network.</p>
+          </div>
+        </div>
+        <div class="glass-card rounded-xl p-5 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono font-bold text-brand-blue">STEP 02</span>
+            <h4 class="font-bold text-white text-sm mt-1 mb-2">Get Access</h4>
+            <p class="text-xs text-slate-400">Receive private studio portal access, prompt packs & templates.</p>
+          </div>
+        </div>
+        <div class="glass-card rounded-xl p-5 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono font-bold text-purple-400">STEP 03</span>
+            <h4 class="font-bold text-white text-sm mt-1 mb-2">Hands-on Labs</h4>
+            <p class="text-xs text-slate-400">Follow live guided workflows with real tool hands-on exercises.</p>
+          </div>
+        </div>
+        <div class="glass-card rounded-xl p-5 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono font-bold text-brand-cyan">STEP 04</span>
+            <h4 class="font-bold text-white text-sm mt-1 mb-2">Build Projects</h4>
+            <p class="text-xs text-slate-400">Complete 6 guided blueprints with direct instructor feedback.</p>
+          </div>
+        </div>
+        <div class="glass-card rounded-xl p-5 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono font-bold text-emerald-400">STEP 05</span>
+            <h4 class="font-bold text-white text-sm mt-1 mb-2">Portfolio Build</h4>
+            <p class="text-xs text-slate-400">Assemble a high-converting reel and showpiece landing link.</p>
+          </div>
+        </div>
+        <div class="glass-card rounded-xl p-5 border border-slate-800 flex flex-col justify-between border-brand-cyan/40 bg-brand-cyan/5">
+          <div>
+            <span class="text-xs font-mono font-bold text-brand-cyan">STEP 06</span>
+            <h4 class="font-bold text-white text-sm mt-1 mb-2">Create & Earn</h4>
+            <p class="text-xs text-slate-300">Pitch clients or launch personal YouTube and social content channels.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="py-24 bg-[#0a0e19] relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-cyan">Investment in Your Future</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">CHOOSE YOUR LEARNING PLAN</h2>
+        <p class="text-slate-300 text-sm sm:text-base mt-2">
+          Transparent pricing with full lifetime project updates. No hidden charges.
+        </p>
+
+        <!-- Currency Switcher -->
+        <div class="mt-6 inline-flex p-1 rounded-xl bg-slate-900 border border-slate-800">
+          <button id="curr-ngn-btn" onclick="setCurrency('NGN')" class="px-4 py-1.5 rounded-lg text-xs font-bold bg-brand-cyan text-slate-950 transition">
+            NGN (₦) Nigeria
+          </button>
+          <button id="curr-usd-btn" onclick="setCurrency('USD')" class="px-4 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">
+            USD ($) International
+          </button>
+        </div>
+      </div>
+
+      <!-- Pricing Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Standard Plan -->
+        <div class="glass-card rounded-2xl p-7 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-400">SELF-PACED</span>
+              <span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300 font-semibold">FOUNDATION</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Standard Class</h3>
+            <p class="text-xs text-slate-300 mb-6">Complete curriculum for independent creators who want core AI skills.</p>
+
+            <div class="mb-6">
+              <span class="text-3xl sm:text-4xl font-extrabold text-white font-mono" id="price-standard-display">₦45,000</span>
+              <span class="text-xs text-slate-400 ml-1">/ one-time</span>
+            </div>
+
+            <ul class="text-xs text-slate-300 space-y-3 mb-8 border-t border-slate-800 pt-6">
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-brand-cyan shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Full access to all 8 core modules</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-brand-cyan shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>6 Real-world project blueprints</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-brand-cyan shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Community group access</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-brand-cyan shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Curated prompt architecture pack</span>
+              </li>
+              <li class="flex items-center gap-2.5 text-slate-500">
+                <span class="text-slate-600 font-mono">✕</span>
+                <span>No live weekly critique calls</span>
+              </li>
+              <li class="flex items-center gap-2.5 text-slate-500">
+                <span class="text-slate-600 font-mono">✕</span>
+                <span>No 1-on-1 portfolio review</span>
+              </li>
+            </ul>
+          </div>
+
+          <button onclick="selectPlanAndRegister('Standard')" class="w-full py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs sm:text-sm border border-slate-700 hover:border-brand-cyan/40 transition">
+            ENROLL IN STANDARD
+          </button>
+        </div>
+
+        <!-- Premium Plan (Popular Highlight) -->
+        <div class="relative glass-card rounded-2xl p-7 border-2 border-brand-cyan shadow-glow-cyan/40 flex flex-col justify-between bg-gradient-to-b from-[#131b2e] to-[#0d121f]">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-brand-cyan to-brand-violet text-white text-[11px] font-extrabold tracking-wider uppercase shadow-md">
+            ★ MOST POPULAR COHORT
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between mb-4 mt-2">
+              <span class="text-xs font-bold uppercase tracking-wider text-brand-cyan">INTERACTIVE COHORT</span>
+              <span class="px-2 py-0.5 rounded text-[10px] bg-brand-cyan/20 text-brand-cyan font-bold">RECOMMENDED</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2">Premium Cohort</h3>
+            <p class="text-xs text-slate-300 mb-6">Live cohort training, direct project critiques, and portfolio certification.</p>
+
+            <div class="mb-6">
+              <span class="text-3xl sm:text-4xl font-extrabold text-brand-cyan font-mono" id="price-premium-display">₦85,000</span>
+              <span class="text-xs text-slate-400 ml-1">/ one-time</span>
+            </div>
+
+            <ul class="text-xs text-slate-200 space-y-3 mb-8 border-t border-slate-800 pt-6">
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-brand-cyan shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <strong class="text-white">Everything in Standard Plan</strong>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-brand-cyan shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Weekly Live Zoom Workshops & Q&A</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-brand-cyan shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Direct instructor critique on all 6 projects</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-brand-cyan shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Verified Certificate of Completion</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-brand-cyan shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Exclusive Freelance & Client Pitch Deck kit</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-brand-cyan shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Private Discord/WhatsApp VIP channel</span>
+              </li>
+            </ul>
+          </div>
+
+          <button onclick="selectPlanAndRegister('Premium')" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-cyan via-brand-blue to-brand-violet text-white font-bold text-xs sm:text-sm shadow-glow-cyan hover:scale-[1.02] transition">
+            ENROLL IN PREMIUM COHORT
+          </button>
+        </div>
+
+        <!-- VIP 1-on-1 Plan -->
+        <div class="glass-card rounded-2xl p-7 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider text-purple-400">EXECUTIVE</span>
+              <span class="px-2 py-0.5 rounded text-[10px] bg-purple-500/20 text-purple-300 font-semibold">LIMITED SEATS</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">1-on-1 VIP Mentorship</h3>
+            <p class="text-xs text-slate-300 mb-6">Direct executive coaching for studio leads, founders, and serious creators.</p>
+
+            <div class="mb-6">
+              <span class="text-3xl sm:text-4xl font-extrabold text-white font-mono" id="price-vip-display">₦250,000</span>
+              <span class="text-xs text-slate-400 ml-1">/ cohort</span>
+            </div>
+
+            <ul class="text-xs text-slate-300 space-y-3 mb-8 border-t border-slate-800 pt-6">
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-brand-cyan shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Everything in Premium Cohort</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-brand-cyan shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span><strong>4 Dedicated 1-on-1 60min Zoom sessions</strong></span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-brand-cyan shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Custom client workflow review for your business</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-brand-cyan shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Direct WhatsApp mentor access (30 days)</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-brand-cyan shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Commercial client contract templates</span>
+              </li>
+            </ul>
+          </div>
+
+          <button onclick="selectPlanAndRegister('VIP Mentorship')" class="w-full py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs sm:text-sm border border-slate-700 hover:border-purple-500/50 transition">
+            APPLY FOR 1-ON-1 VIP
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="register" class="py-24 bg-[#07090e] border-t border-slate-800 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Form Left Information Column -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-cyan">Admissions Desk</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Enroll in AI Creative Studio</h2>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Fill out your details to secure your place in the upcoming cohort. Seats are capped per session to guarantee personalized project reviews and feedback.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+              <div class="w-8 h-8 rounded-lg bg-brand-cyan/20 text-brand-cyan flex items-center justify-center shrink-0">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              </div>
+              <div>
+                <span class="text-xs font-bold text-white block">Next Cohort Orientation</span>
+                <span class="text-xs text-slate-400" id="admissions-cohort-date">Saturday, October 3, 2026 • Live Online</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+              <div class="w-8 h-8 rounded-lg bg-brand-blue/20 text-brand-blue flex items-center justify-center shrink-0">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              </div>
+              <div>
+                <span class="text-xs font-bold text-white block">Fast Track Confirmation</span>
+                <span class="text-xs text-slate-400">Instant registration ticket and direct WhatsApp coordinator onboarding.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Right Column -->
+        <div class="lg:col-span-7">
+          <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-700/80 shadow-2xl relative">
+            <h3 class="text-xl font-bold text-white mb-2">Student Application Form</h3>
+            <p class="text-xs text-slate-400 mb-6">Complete all fields below. Our admissions team verifies every submission.</p>
+
+            <form id="registration-form" onsubmit="handleRegistrationSubmit(event)" class="space-y-4">
+              <!-- Selected Plan Banner -->
+              <div class="p-3 rounded-xl bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-between text-xs">
+                <span class="text-slate-300">Selected Plan: <strong class="text-brand-cyan" id="form-selected-plan-text">Premium Cohort</strong></span>
+                <a href="#pricing" class="text-brand-cyan underline font-semibold">Change plan</a>
+              </div>
+              <input type="hidden" id="reg-plan-input" name="selectedPlan" value="Premium Cohort" />
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Full Name -->
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1.5" for="reg-name">Full Name *</label>
+                  <input type="text" id="reg-name" required placeholder="e.g. Samuel Adeleke" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-brand-cyan transition" />
+                </div>
+
+                <!-- Email -->
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1.5" for="reg-email">Email Address *</label>
+                  <input type="email" id="reg-email" required placeholder="name@example.com" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-brand-cyan transition" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- WhatsApp Phone -->
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1.5" for="reg-whatsapp">WhatsApp Number *</label>
+                  <input type="tel" id="reg-whatsapp" required placeholder="e.g. +234 801 234 5678" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-brand-cyan transition" />
+                </div>
+
+                <!-- Country -->
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1.5" for="reg-country">Country of Residence *</label>
+                  <input type="text" id="reg-country" required placeholder="e.g. Nigeria, Ghana, UK, US" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-brand-cyan transition" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Current Profession -->
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1.5" for="reg-profession">Current Profession *</label>
+                  <input type="text" id="reg-profession" required placeholder="e.g. Graphic Designer, Student, Creator" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-brand-cyan transition" />
+                </div>
+
+                <!-- Experience Level -->
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1.5" for="reg-experience">Experience Level with AI *</label>
+                  <select id="reg-experience" required class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-brand-cyan transition">
+                    <option value="Complete Beginner">Complete Beginner (Never used GenAI)</option>
+                    <option value="Beginner">Beginner (Used ChatGPT occasionally)</option>
+                    <option value="Intermediate">Intermediate (Used Midjourney/Canva)</option>
+                    <option value="Advanced">Advanced (Looking for cinematic pipelines)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Learning Goal -->
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1.5" for="reg-goal">Primary Learning Goal *</label>
+                  <select id="reg-goal" required class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-brand-cyan transition">
+                    <option value="AI Video Creation">AI Video Creation</option>
+                    <option value="AI Image Creation">AI Image Creation</option>
+                    <option value="AI Storytelling">AI Storytelling & Filmmaking</option>
+                    <option value="Freelancing & Client Work">Freelancing & Client Work</option>
+                    <option value="YouTube Automation">Faceless YouTube Creation</option>
+                    <option value="Business & Social Ads">Business & Social Media Ads</option>
+                    <option value="Master Everything">Master Everything (Full Stack)</option>
+                  </select>
+                </div>
+
+                <!-- Preferred Learning Format -->
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1.5" for="reg-format">Preferred Learning Format</label>
+                  <select id="reg-format" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-brand-cyan transition">
+                    <option value="Live Weekend Cohort">Live Weekend Zoom Sessions</option>
+                    <option value="Self-Paced Evening">Self-Paced with Recorded Labs</option>
+                    <option value="Hybrid">Hybrid Flexible</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Referral Source -->
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1.5" for="reg-source">How did you hear about AI Creative Studio?</label>
+                <select id="reg-source" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-brand-cyan transition">
+                  <option value="Instagram">Instagram</option>
+                  <option value="Twitter / X">Twitter / X</option>
+                  <option value="WhatsApp Group">WhatsApp Community</option>
+                  <option value="YouTube">YouTube</option>
+                  <option value="Friend Referral">Friend or Colleague</option>
+                  <option value="Google Search">Google Search</option>
+                </select>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="pt-2">
+                <button type="submit" id="reg-submit-btn" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-cyan via-brand-blue to-brand-violet text-white font-bold text-sm shadow-glow-cyan hover:shadow-cyan-400/50 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 flex items-center justify-center gap-2">
+                  <span>SUBMIT REGISTRATION</span>
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </button>
+              </div>
+
+              <p class="text-[11px] text-center text-slate-500 mt-2">
+                🔒 Your contact info is strictly confidential. We never spam.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Success Modal -->
+  <div id="registration-success-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+    <div class="bg-[#0f1422] border border-brand-cyan/60 max-w-lg w-full rounded-2xl p-7 shadow-glow-cyan text-center relative">
+      <div class="w-16 h-16 rounded-full bg-brand-cyan/20 border border-brand-cyan mx-auto flex items-center justify-center text-brand-cyan mb-4">
+        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+      </div>
+
+      <h3 class="text-2xl font-bold text-white mb-2">Registration Received!</h3>
+      <p class="text-slate-300 text-sm leading-relaxed mb-6">
+        Thank you for your interest in AI Creative Studio. Your profile and seat reservation have been saved. Our admissions team will contact you shortly with the onboarding orientation schedule.
+      </p>
+
+      <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 text-left mb-6 space-y-1.5 text-xs">
+        <div class="text-slate-400">Student: <span class="text-white font-semibold" id="success-modal-name">-</span></div>
+        <div class="text-slate-400">Plan: <span class="text-brand-cyan font-semibold" id="success-modal-plan">-</span></div>
+        <div class="text-slate-400">Cohort: <span class="text-slate-200 font-semibold" id="success-modal-cohort">October 2026 Session</span></div>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <a id="success-whatsapp-link" href="#" target="_blank" class="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg transition">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.541 1.948.825 2.795.825l.001-.001c3.182 0 5.769-2.587 5.77-5.766.001-3.183-2.586-5.771-5.77-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.072-2.072-.505-1.748-.732-2.883-2.518-2.97-2.634-.088-.117-.708-.941-.708-1.794 0-.853.447-1.273.607-1.446.16-.174.349-.217.465-.217.116 0 .233.001.335.006.107.005.25.04.385.367.144.348.494 1.206.538 1.294.044.088.073.19.015.305-.058.115-.088.19-.175.292-.087.102-.184.227-.263.305-.087.087-.178.182-.077.356.101.174.45 1.742 1.966 2.088.195.044.38.03.524-.044.145-.073.349-.405.465-.55.116-.145.233-.117.378-.059.145.059.932.44 1.092.52.16.08.267.119.306.186.039.068.039.39-.105.795z"/></svg>
+          <span>CHAT WITH US ON WHATSAPP NOW</span>
+        </a>
+
+        <button onclick="closeSuccessModal()" class="w-full py-2.5 text-xs text-slate-400 hover:text-white transition">
+          Close Window
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <section class="py-16 bg-[#0a0d16] border-t border-b border-slate-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="glass-card rounded-2xl p-8 sm:p-10 border border-slate-700/80 bg-gradient-to-r from-slate-900 via-[#0e1424] to-slate-900 relative overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-400">FREE CREATOR RESOURCE PACK</span>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-white">NOT READY TO JOIN YET?</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Get our curated <strong class="text-white">"AI Creative Toolkit & 50+ Cinematic Prompt Cheat Sheet"</strong> sent directly to your email & WhatsApp, plus class date announcements.
+            </p>
+          </div>
+
+          <div class="lg:col-span-5">
+            <form id="lead-form" onsubmit="handleLeadSubmit(event)" class="space-y-3">
+              <input type="text" id="lead-name" required placeholder="Your First Name" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:outline-none focus:border-brand-cyan" />
+              <input type="email" id="lead-email" required placeholder="Your Email Address" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:outline-none focus:border-brand-cyan" />
+              <input type="tel" id="lead-whatsapp" placeholder="WhatsApp Number (Optional)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:outline-none focus:border-brand-cyan" />
+              <button type="submit" class="w-full py-3 rounded-xl bg-brand-cyan hover:bg-cyan-400 text-slate-950 font-bold text-xs shadow-glow-cyan transition">
+                GET FREE AI CREATIVE TOOLKIT
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="py-24 bg-[#07090e] relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-cyan">Clear Answers</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Frequently Asked Questions</h2>
+        <p class="text-xs sm:text-sm text-slate-400 mt-2">Everything you need to know before enrolling in the academy.</p>
+      </div>
+
+      <div class="space-y-4" id="faq-accordion-container">
+        <!-- Injected via JavaScript from active state -->
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-gradient-to-b from-[#07090e] via-[#0c1222] to-[#07090e] border-t border-slate-800 relative overflow-hidden">
+    <div class="absolute inset-0 radial-ambient-1 pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
+      <span class="inline-block px-3.5 py-1 rounded-full bg-brand-cyan/15 text-brand-cyan font-mono text-xs font-semibold border border-brand-cyan/30">
+        YOUR TIME IS NOW
+      </span>
+
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+        YOUR NEXT CREATIVE SKILL COULD BE AI.
+      </h2>
+
+      <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        Don't just watch what AI can create. Learn how to direct it, build a portfolio of unforgettable visuals, and lead the future of content.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+        <a href="#register" class="w-full sm:w-auto px-9 py-4 rounded-xl bg-gradient-to-r from-brand-cyan via-brand-blue to-brand-violet text-white font-extrabold text-sm shadow-glow-cyan hover:shadow-cyan-400/50 hover:scale-105 transition">
+          JOIN AI CREATIVE STUDIO
+        </a>
+        <a id="final-whatsapp-btn" href="#" target="_blank" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-slate-900 border border-slate-700 hover:border-brand-cyan/40 text-slate-200 font-semibold text-sm flex items-center justify-center gap-2 transition">
+          <svg class="w-4 h-4 text-emerald-400 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.541 1.948.825 2.795.825l.001-.001c3.182 0 5.769-2.587 5.77-5.766.001-3.183-2.586-5.771-5.77-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.072-2.072-.505-1.748-.732-2.883-2.518-2.97-2.634-.088-.117-.708-.941-.708-1.794 0-.853.447-1.273.607-1.446.16-.174.349-.217.465-.217.116 0 .233.001.335.006.107.005.25.04.385.367.144.348.494 1.206.538 1.294.044.088.073.19.015.305-.058.115-.088.19-.175.292-.087.102-.184.227-.263.305-.087.087-.178.182-.077.356.101.174.45 1.742 1.966 2.088.195.044.38.03.524-.044.145-.073.349-.405.465-.55.116-.145.233-.117.378-.059.145.059.932.44 1.092.52.16.08.267.119.306.186.039.068.039.39-.105.795z"/></svg>
+          <span>ASK A QUESTION ON WHATSAPP</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-[#05070a] border-t border-slate-900 pt-16 pb-12 text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-12 border-b border-slate-900">
+        <!-- Col 1: Brand & Bio -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-brand-cyan flex items-center justify-center text-slate-950 font-bold text-sm">AI</div>
+            <span class="font-bold text-base text-white tracking-wider">AI CREATIVE STUDIO</span>
+          </div>
+          <p class="text-slate-400 text-xs max-w-sm leading-relaxed">
+            Learn AI. Create Content. Build the Future. The premier digital laboratory for next-generation content creators, visual storytellers, and media entrepreneurs.
+          </p>
+          <div class="text-[11px] text-slate-500">
+            Headquarters: Lagos, Nigeria • Global Online Cohorts
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white text-xs uppercase tracking-wider">Navigation</h4>
+          <ul class="space-y-2">
+            <li><a href="#hero" class="hover:text-brand-cyan transition">Home</a></li>
+            <li><a href="#about" class="hover:text-brand-cyan transition">Paradigm Shift</a></li>
+            <li><a href="#curriculum" class="hover:text-brand-cyan transition">Course Syllabus</a></li>
+            <li><a href="#projects" class="hover:text-brand-cyan transition">Project Showcase</a></li>
+            <li><a href="#workflow" class="hover:text-brand-cyan transition">Workflow Steps</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Community & Legal -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white text-xs uppercase tracking-wider">Admissions</h4>
+          <ul class="space-y-2">
+            <li><a href="#pricing" class="hover:text-brand-cyan transition">Tuition Plans</a></li>
+            <li><a href="#register" class="hover:text-brand-cyan transition">Enroll in Cohort</a></li>
+            <li><a href="#faq" class="hover:text-brand-cyan transition">Frequently Asked</a></li>
+            <li><button onclick="toggleAdminModal()" class="hover:text-brand-cyan text-left transition">Admin Control Panel</button></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact & Social -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white text-xs uppercase tracking-wider">Connect</h4>
+          <ul class="space-y-2">
+            <li class="flex items-center gap-2">
+              <span class="text-slate-500">Email:</span>
+              <span id="footer-contact-email" class="text-slate-300">admissions@aicreativestudio.com</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-slate-500">WhatsApp:</span>
+              <span id="footer-contact-phone" class="text-slate-300">+234 812 345 6789</span>
+            </li>
+          </ul>
+          <div class="pt-2 flex items-center gap-3 text-slate-400">
+            <span class="p-1.5 rounded-lg bg-slate-900 hover:text-white cursor-pointer transition">Instagram</span>
+            <span class="p-1.5 rounded-lg bg-slate-900 hover:text-white cursor-pointer transition">YouTube</span>
+            <span class="p-1.5 rounded-lg bg-slate-900 hover:text-white cursor-pointer transition">X</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Honest Transparency Disclaimer -->
+      <div class="pt-8 text-[11px] text-slate-600 space-y-2 text-center md:text-left">
+        <p>
+          <strong>Honest Trust Guarantee:</strong> AI Creative Studio provides practical creative training, prompt frameworks, and production systems. We do NOT guarantee instant wealth, automatic corporate jobs, or overnight millionaire status. Career and client income depends entirely upon personal dedication, practice, and execution quality.
+        </p>
+        <div class="flex flex-col md:flex-row items-center justify-between pt-4 text-slate-500">
+          <span>&copy; 2026 AI Creative Studio Academy. All rights reserved.</span>
+          <div class="flex gap-4 mt-2 md:mt-0">
+            <span class="hover:text-slate-400 cursor-pointer">Privacy Policy</span>
+            <span class="hover:text-slate-400 cursor-pointer">Terms of Service</span>
+            <span class="hover:text-slate-400 cursor-pointer">Student Code of Conduct</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Action Button -->
+  <div class="fixed bottom-6 right-6 z-40">
+    <a id="floating-whatsapp-pill" href="#" target="_blank" class="group flex items-center gap-2.5 px-4 py-3 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs shadow-xl shadow-emerald-950/50 hover:scale-105 active:scale-95 transition-all">
+      <span class="relative flex h-3 w-3">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-950 opacity-50"></span>
+        <span class="relative inline-flex rounded-full h-3 w-3 bg-slate-950"></span>
+      </span>
+      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.541 1.948.825 2.795.825l.001-.001c3.182 0 5.769-2.587 5.77-5.766.001-3.183-2.586-5.771-5.77-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.072-2.072-.505-1.748-.732-2.883-2.518-2.97-2.634-.088-.117-.708-.941-.708-1.794 0-.853.447-1.273.607-1.446.16-.174.349-.217.465-.217.116 0 .233.001.335.006.107.005.25.04.385.367.144.348.494 1.206.538 1.294.044.088.073.19.015.305-.058.115-.088.19-.175.292-.087.102-.184.227-.263.305-.087.087-.178.182-.077.356.101.174.45 1.742 1.966 2.088.195.044.38.03.524-.044.145-.073.349-.405.465-.55.116-.145.233-.117.378-.059.145.059.932.44 1.092.52.16.08.267.119.306.186.039.068.039.39-.105.795z"/></svg>
+      <span class="hidden sm:inline">CHAT WITH ADMISSIONS</span>
+    </a>
+  </div>
+
+  <!-- Sticky Mobile Bottom Conversion Bar -->
+  <div class="sm:hidden fixed bottom-0 left-0 right-0 z-30 p-3 bg-[#07090e]/95 backdrop-blur-md border-t border-slate-800 flex items-center justify-between gap-3">
+    <div class="text-[11px]">
+      <div class="font-bold text-white">Next Cohort Starting Soon</div>
+      <div class="text-brand-cyan font-mono text-[10px]">Standard & Premium Plans</div>
+    </div>
+    <a href="#register" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-cyan to-brand-violet text-white font-bold text-xs shadow-glow-cyan">
+      ENROLL NOW
+    </a>
+  </div>
+
+  <div id="admin-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-6 bg-black/90 backdrop-blur-xl">
+    <div class="bg-[#0b101c] border border-slate-700/80 w-full max-w-5xl rounded-2xl shadow-2xl overflow-hidden max-h-[95vh] flex flex-col">
+      <!-- Admin Modal Header -->
+      <div class="px-6 py-4 bg-[#080c16] border-b border-slate-800 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-brand-cyan/20 border border-brand-cyan text-brand-cyan flex items-center justify-center">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-bold text-white">AI Creative Studio Management Hub</h3>
+            <span class="text-[10px] text-slate-400">Live Registrations, Leads, Pricing & Dynamic Site Settings</span>
+          </div>
+        </div>
+        <button onclick="toggleAdminModal()" class="text-slate-400 hover:text-white p-1 rounded-lg">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Password Lock Screen View -->
+      <div id="admin-auth-screen" class="p-8 sm:p-12 text-center max-w-md mx-auto my-auto space-y-4">
+        <div class="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 mx-auto flex items-center justify-center text-slate-300">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        </div>
+        <h4 class="text-lg font-bold text-white">Administrator Access Required</h4>
+        <p class="text-xs text-slate-400">Enter the administration security key to inspect student applications, export CSVs, and adjust website settings.</p>
+        <div class="text-[11px] font-mono px-3 py-1.5 rounded bg-slate-900 border border-slate-800 text-brand-cyan">
+          Demo Default PIN: <strong class="text-white">admin123</strong>
+        </div>
+
+        <form onsubmit="handleAdminAuth(event)" class="space-y-3 pt-2">
+          <input type="password" id="admin-pin-input" placeholder="Enter password or PIN" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-sm text-center text-white focus:outline-none focus:border-brand-cyan" />
+          <button type="submit" class="w-full py-2.5 rounded-xl bg-brand-cyan hover:bg-cyan-400 text-slate-950 font-bold text-xs transition">
+            AUTHENTICATE & ENTER
+          </button>
+        </form>
+      </div>
+
+      <!-- Authenticated Dashboard View -->
+      <div id="admin-dashboard-view" class="hidden flex-1 overflow-y-auto p-4 sm:p-6 space-y-6">
+        <!-- Admin KPI Cards Row -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="glass-card p-4 rounded-xl border border-slate-800">
+            <span class="text-[11px] text-slate-400 uppercase font-semibold">Total Registrations</span>
+            <div class="text-2xl font-bold font-mono text-brand-cyan mt-1" id="kpi-total-reg">0</div>
+          </div>
+          <div class="glass-card p-4 rounded-xl border border-slate-800">
+            <span class="text-[11px] text-slate-400 uppercase font-semibold">Resource Leads</span>
+            <div class="text-2xl font-bold font-mono text-purple-400 mt-1" id="kpi-total-leads">0</div>
+          </div>
+          <div class="glass-card p-4 rounded-xl border border-slate-800">
+            <span class="text-[11px] text-slate-400 uppercase font-semibold">Projected Tuition</span>
+            <div class="text-2xl font-bold font-mono text-emerald-400 mt-1" id="kpi-est-revenue">₦0</div>
+          </div>
+          <div class="glass-card p-4 rounded-xl border border-slate-800">
+            <span class="text-[11px] text-slate-400 uppercase font-semibold">Active Cohort Date</span>
+            <div class="text-xs font-bold text-slate-200 mt-2 truncate" id="kpi-cohort-date">-</div>
+          </div>
+        </div>
+
+        <!-- Admin Tab Controls -->
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3 flex-wrap gap-2">
+          <div class="flex items-center gap-2">
+            <button onclick="switchAdminTab('registrations')" id="tab-btn-registrations" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-brand-cyan text-slate-950 transition">
+              Student Registrations
+            </button>
+            <button onclick="switchAdminTab('leads')" id="tab-btn-leads" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition">
+              Lead Signups
+            </button>
+            <button onclick="switchAdminTab('settings')" id="tab-btn-settings" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition">
+              Website Settings & Pricing
+            </button>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button onclick="exportRegistrationsCSV()" class="px-3 py-1.5 rounded-lg bg-emerald-600/20 text-emerald-300 border border-emerald-500/40 text-xs font-semibold flex items-center gap-1.5 hover:bg-emerald-600/30 transition">
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              <span>Export CSV</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Tab 1: Student Registrations Table -->
+        <div id="admin-tab-registrations" class="space-y-4">
+          <!-- Filter and Search Row -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <input type="text" id="admin-search-input" onkeyup="filterRegistrations()" placeholder="Search by name, email, or country..." class="px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-xs text-white focus:outline-none focus:border-brand-cyan" />
+            <select id="admin-filter-plan" onchange="filterRegistrations()" class="px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-xs text-white focus:outline-none focus:border-brand-cyan">
+              <option value="">All Plans</option>
+              <option value="Standard">Standard</option>
+              <option value="Premium">Premium</option>
+              <option value="VIP">VIP Mentorship</option>
+            </select>
+            <button onclick="seedDemoStudents()" class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 font-semibold border border-slate-700">
+              + Load Sample Students (Demo)
+            </button>
+          </div>
+
+          <!-- Table Container -->
+          <div class="overflow-x-auto rounded-xl border border-slate-800">
+            <table class="w-full text-left text-xs text-slate-300">
+              <thead class="bg-slate-900/90 text-slate-400 font-mono text-[11px] uppercase border-b border-slate-800">
+                <tr>
+                  <th class="px-4 py-3">Timestamp</th>
+                  <th class="px-4 py-3">Student</th>
+                  <th class="px-4 py-3">WhatsApp / Phone</th>
+                  <th class="px-4 py-3">Plan</th>
+                  <th class="px-4 py-3">Goal</th>
+                  <th class="px-4 py-3">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="admin-registrations-tbody" class="divide-y divide-slate-800 bg-[#0c101c]">
+                <!-- Injected dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tab 2: Lead Submissions Table -->
+        <div id="admin-tab-leads" class="hidden space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-slate-400">Toolkit and Resource downloads captured from the footer lead magnet.</span>
+            <button onclick="exportLeadsCSV()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 border border-slate-700">
+              Export Leads CSV
+            </button>
+          </div>
+          <div class="overflow-x-auto rounded-xl border border-slate-800">
+            <table class="w-full text-left text-xs text-slate-300">
+              <thead class="bg-slate-900/90 text-slate-400 font-mono text-[11px] uppercase border-b border-slate-800">
+                <tr>
+                  <th class="px-4 py-3">Date</th>
+                  <th class="px-4 py-3">Lead Name</th>
+                  <th class="px-4 py-3">Email</th>
+                  <th class="px-4 py-3">WhatsApp</th>
+                </tr>
+              </thead>
+              <tbody id="admin-leads-tbody" class="divide-y divide-slate-800 bg-[#0c101c]">
+                <!-- Injected dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tab 3: Website Settings & Pricing Editor -->
+        <div id="admin-tab-settings" class="hidden space-y-6">
+          <form onsubmit="saveAdminSettings(event)" class="space-y-6">
+            <!-- Pricing Settings -->
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-4">
+              <h4 class="text-xs font-bold text-brand-cyan uppercase tracking-wider">Tuition & Pricing Settings (NGN)</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div>
+                  <label class="block text-[11px] text-slate-400 mb-1" for="set-price-standard">Standard Plan (₦)</label>
+                  <input type="number" id="set-price-standard" class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-xs text-white" />
+                </div>
+                <div>
+                  <label class="block text-[11px] text-slate-400 mb-1" for="set-price-premium">Premium Plan (₦)</label>
+                  <input type="number" id="set-price-premium" class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-xs text-white" />
+                </div>
+                <div>
+                  <label class="block text-[11px] text-slate-400 mb-1" for="set-price-vip">VIP Mentorship (₦)</label>
+                  <input type="number" id="set-price-vip" class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-xs text-white" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact & WhatsApp Engine -->
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-4">
+              <h4 class="text-xs font-bold text-brand-cyan uppercase tracking-wider">WhatsApp & Communications Config</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-[11px] text-slate-400 mb-1" for="set-whatsapp-phone">WhatsApp Business Number (digits only, e.g. 2348123456789)</label>
+                  <input type="text" id="set-whatsapp-phone" class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-xs text-white" />
+                </div>
+                <div>
+                  <label class="block text-[11px] text-slate-400 mb-1" for="set-contact-email">Contact / Admissions Email</label>
+                  <input type="email" id="set-contact-email" class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-xs text-white" />
+                </div>
+              </div>
+              <div>
+                <label class="block text-[11px] text-slate-400 mb-1" for="set-cohort-date">Next Cohort Orientation Announcement String</label>
+                <input type="text" id="set-cohort-date" class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-xs text-white" />
+              </div>
+            </div>
+
+            <!-- Live Community Stats -->
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-4">
+              <h4 class="text-xs font-bold text-brand-cyan uppercase tracking-wider">Community Display Statistics</h4>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div>
+                  <label class="block text-[11px] text-slate-400 mb-1" for="set-stat-students">Students Count</label>
+                  <input type="text" id="set-stat-students" class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-xs text-white" />
+                </div>
+                <div>
+                  <label class="block text-[11px] text-slate-400 mb-1" for="set-stat-projects">Projects Count</label>
+                  <input type="text" id="set-stat-projects" class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-xs text-white" />
+                </div>
+                <div>
+                  <label class="block text-[11px] text-slate-400 mb-1" for="set-stat-countries">Countries Count</label>
+                  <input type="text" id="set-stat-countries" class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-xs text-white" />
+                </div>
+                <div>
+                  <label class="block text-[11px] text-slate-400 mb-1" for="set-stat-rating">Satisfaction Rating</label>
+                  <input type="text" id="set-stat-rating" class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-xs text-white" />
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="px-6 py-3 rounded-xl bg-brand-cyan hover:bg-cyan-400 text-slate-950 font-bold text-xs transition">
+              SAVE & APPLY TO LIVE WEBSITE
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* =========================================================================
+       1. INITIAL STATE, DATA STORES & PERSISTENCE
+       ========================================================================= */
+    const DEFAULT_CONFIG = {
+      pricing: {
+        standardNGN: 45000,
+        premiumNGN: 85000,
+        vipNGN: 250000,
+        standardUSD: 35,
+        premiumUSD: 65,
+        vipUSD: 195
+      },
+      currency: 'NGN',
+      whatsappPhone: '2348123456789',
+      contactEmail: 'admissions@aicreativestudio.com',
+      cohortDate: 'Saturday, October 3, 2026 • Live Online Cohort',
+      stats: {
+        students: '148+',
+        projects: '310+',
+        countries: '12',
+        rating: '4.9 / 5'
+      }
+    };
+
+    let appState = {
+      config: JSON.parse(localStorage.getItem('ai_studio_config')) || DEFAULT_CONFIG,
+      registrations: JSON.parse(localStorage.getItem('ai_studio_students')) || [],
+      leads: JSON.parse(localStorage.getItem('ai_studio_leads')) || [],
+      isAdminAuthenticated: false,
+      selectedCurrency: 'NGN'
+    };
+
+    // Pre-populate realistic testimonial data framework
+    const DEFAULT_TESTIMONIALS = [
+      {
+        name: "Damilola O.",
+        role: "Brand Strategist, Lagos",
+        avatar: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=200&q=80",
+        rating: 5,
+        project: "Commercial Video Ad",
+        quote: "Before this class, Runway Gen-3 was just a confusing toy. The step-by-step camera motion prompting helped our agency deliver a full product spec reel that closed our biggest client retainer this quarter."
+      },
+      {
+        name: "Marcus Sterling",
+        role: "YouTuber & Filmmaker, London",
+        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+        rating: 5,
+        project: "Consistent Character Story",
+        quote: "Character consistency was my biggest hurdle in AI filmmaking. The Midjourney CREF + Face Refinement workflow taught here is pure gold. My first AI short crossed 45k views in 72 hours."
+      },
+      {
+        name: "Chioma Eze",
+        role: "Freelance Creative, Abuja",
+        avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80",
+        rating: 5,
+        project: "Viral TikTok Reels Series",
+        quote: "I had zero video editing experience. The instructors explain the entire pipeline from idea, to script, to Midjourney images, to motion in CapCut clearly. Now I create AI commercials for Shopify stores."
+      },
+      {
+        name: "Kevin Chen",
+        role: "Digital Marketer, Toronto",
+        avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
+        rating: 5,
+        project: "AI Documentary Series",
+        quote: "The module on voice cloning with ElevenLabs paired with Kling AI cinematic pans saved us at least $4,000 in voiceover artists and stock footage licensing on our latest campaign."
+      },
+      {
+        name: "Zainab Al-Hassan",
+        role: "Graphic Designer, Accra",
+        avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+        rating: 5,
+        project: "Concept Art Universe",
+        quote: "The prompt architecture frameworks completely removed the guesswork. I went from getting random distorted hands to consistently clean, photorealistic visuals ready for pitch decks."
+      },
+      {
+        name: "Tunde Bakare",
+        role: "Content Creator, Port Harcourt",
+        avatar: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=200&q=80",
+        rating: 5,
+        project: "AI Ad Campaign",
+        quote: "Practical, fast-paced, and no fluff. The community group alone is worth it because everyone shares real prompts, lighting codes, and workflow fixes daily."
+      }
+    ];
+
+    /* =========================================================================
+       2. REEL SHOWCASE & TAB INTERACTION LOGIC
+       ========================================================================= */
+    const REEL_PREVIEWS = [
+      {
+        title: "NEO_TOKYO_CYBERPUNK_01.MP4",
+        tool: "Runway Gen-3",
+        aspect: "16:9 • Anamorphic",
+        image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80",
+        prompt: "Hyper-realistic neo-tokyo cyberpunk street, anamorphic lens flare, rain reflections, volumetric steam, 35mm film grain, 8k render."
+      },
+      {
+        title: "HERO_CHARACTER_CONSISTENCY.MP4",
+        tool: "Midjourney + Kling",
+        aspect: "1:1 & 9:16 Portrait",
+        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80",
+        prompt: "Portrait of 28yo female astronaut, scarred eyebrow, golden hour studio rim lighting, 85mm lens f/1.4, photorealistic skin texture."
+      },
+      {
+        title: "LUXURY_PERFUME_COMMERCIAL.MP4",
+        tool: "Luma Dream Machine",
+        aspect: "16:9 Commercial",
+        image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1000&q=80",
+        prompt: "Black obsidian perfume bottle floating in water, dramatic spotlight caustics, slow motion water ripples, cinematic high fashion grade."
+      },
+      {
+        title: "LOST_CIVILIZATION_DOCU.MP4",
+        tool: "Google Veo / Flow",
+        aspect: "2.39:1 Cinema",
+        image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80",
+        prompt: "Drone flyover of ancient futuristic temple submerged in misty jungle canopy, morning mist, golden rays, National Geographic docu style."
+      }
+    ];
+
+    function switchReel(index) {
+      const item = REEL_PREVIEWS[index];
+      if (!item) return;
+
+      document.querySelectorAll('.reel-tab').forEach((tab, i) => {
+        if (i === index) {
+          tab.className = "reel-tab px-2 py-2 rounded-lg bg-brand-cyan/20 border border-brand-cyan/50 text-cyan-300 text-[11px] font-semibold transition";
+        } else {
+          tab.className = "reel-tab px-2 py-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 text-[11px] hover:text-white transition";
+        }
+      });
+
+      document.getElementById('reel-title-display').innerText = item.title;
+      document.getElementById('reel-tool-tag').innerText = item.tool;
+      document.getElementById('reel-ratio-display').innerText = item.aspect;
+      document.getElementById('reel-prompt-display').innerText = `"${item.prompt}"`;
+      document.getElementById('reel-bg').style.backgroundImage = `url('${item.image}')`;
+    }
+
+    function simulateReelPlayback() {
+      showToast("Playing 4K preview stream...", "info");
+      const canvas = document.getElementById('reel-display-canvas');
+      canvas.classList.add('ring-2', 'ring-brand-cyan');
+      setTimeout(() => canvas.classList.remove('ring-2', 'ring-brand-cyan'), 2000);
+    }
+
+    /* =========================================================================
+       3. INTERACTIVE WORKFLOW STEPPER LOGIC
+       ========================================================================= */
+    const WORKFLOW_STEPS = {
+      1: {
+        title: "Phase 1: Concept & Hook Extraction",
+        badge: "IDEA INCEPTION",
+        copy: "Every visual masterpiece starts with a sharp premise. We teach how to feed narrative hooks, themes, and client goals into LLM directors to generate tight multi-shot treatments.",
+        outputType: "Prompt / Script Output",
+        outputData: '“A rogue astronomer spots an impossible light anomaly pulsating near Neptune\'s shadow. 60-second teaser hook.”',
+        tools: "ChatGPT, Claude 3.5, Gemini"
+      },
+      2: {
+        title: "Phase 2: Master Prompt Architecture",
+        badge: "SYNTAX CALIBRATION",
+        copy: "Translate broad concepts into precise algorithmic camera syntax: aperture, lens type, volumetric lighting, color grade palettes, and aspect ratios.",
+        outputType: "Engineered Midjourney Prompt",
+        outputData: '/imagine prompt: cinematic medium shot of vintage research station observation deck, cyan neon terminal reflections, depth of field 35mm --ar 16:9 --v 6.1 --style raw',
+        tools: "Midjourney v6.1, Flux.1 Schnell"
+      },
+      3: {
+        title: "Phase 3: High-Fidelity Image Rendering",
+        badge: "VISUAL ASSET CREATION",
+        copy: "Generate crisp, artifact-free master keyframes with consistent texture, cinematic composition, and zero anatomical distortion.",
+        outputType: "Visual Keyframe Render",
+        outputData: 'Generated 4096 x 2304 photorealistic master still with locked color palette and filmic grain ready for motion vectors.',
+        tools: "Midjourney, Leonardo AI, Magnific"
+      },
+      4: {
+        title: "Phase 4: Motion Vector Synthesis",
+        badge: "VIDEO GENERATION",
+        copy: "Inject camera dynamics into the keyframe. Apply dolly zooms, pans, orbit tracks, and motion brush physics using modern video diffusion models.",
+        outputType: "Video Motion Render",
+        outputData: '5.0s sequence generated with slow backward tracking camera at 24fps with cinematic parallax.',
+        tools: "Runway Gen-3 Alpha, Kling AI, Google Veo"
+      },
+      5: {
+        title: "Phase 5: Voiceover & AI Sound Design",
+        badge: "AUDIO PRODUCTION",
+        copy: "Layer emotive voice synthesis, environmental room tone, subtle foley footsteps, and cinematic orchestral rises generated with AI audio tools.",
+        outputType: "Audio Track & Voice Stem",
+        outputData: 'Studio-mastered 48kHz voiceover stem synced with cinematic low-frequency drone & atmospheric synthesizer.',
+        tools: "ElevenLabs, Udio, Suno, Epidemic"
+      },
+      6: {
+        title: "Phase 6: Final Polish & Export",
+        badge: "MASTER RELEASE",
+        copy: "Stitch sequences in CapCut Pro or Premiere, apply final color grading LUTs, upscale to pristine 4K 60FPS, and render for client delivery or viral social reels.",
+        outputType: "Master Output File",
+        outputData: 'Ready-to-deliver 4K ProRes 422 / H.265 final asset with synchronized subtitles and sound mix.',
+        tools: "CapCut Pro, Topaz Video AI, Premiere"
+      }
+    };
+
+    function setWorkflowStep(stepNumber) {
+      const step = WORKFLOW_STEPS[stepNumber];
+      if (!step) return;
+
+      document.querySelectorAll('.wf-step-btn').forEach((btn, idx) => {
+        if (idx + 1 === stepNumber) {
+          btn.className = "wf-step-btn py-2 px-3 rounded-lg text-xs font-bold font-mono transition bg-brand-cyan text-slate-950";
+        } else {
+          btn.className = "wf-step-btn py-2 px-3 rounded-lg text-xs font-bold font-mono transition bg-slate-800 text-slate-400 hover:text-white";
+        }
+      });
+
+      const container = document.getElementById('workflow-card-body');
+      container.innerHTML = `
+        <div class="md:col-span-6 space-y-3">
+          <span class="text-[10px] font-mono font-bold px-2.5 py-1 rounded bg-brand-cyan/20 text-brand-cyan border border-brand-cyan/40">
+            ${step.badge}
+          </span>
+          <h3 class="text-xl font-bold text-white">${step.title}</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">${step.copy}</p>
+          <div class="pt-2">
+            <span class="text-[11px] text-slate-400">Toolkit Utilized: </span>
+            <span class="text-xs text-brand-cyan font-medium">${step.tools}</span>
+          </div>
+        </div>
+        <div class="md:col-span-6">
+          <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2 font-mono">
+            <div class="flex items-center justify-between text-[11px] text-slate-400 border-b border-slate-800/80 pb-2">
+              <span class="text-slate-300 font-semibold">${step.outputType}</span>
+              <span class="text-brand-cyan">STEP 0${stepNumber}/06</span>
+            </div>
+            <div class="text-xs text-slate-200 pt-1 leading-relaxed bg-slate-900/60 p-3 rounded-lg border border-slate-800">
+              ${step.outputData}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    /* =========================================================================
+       4. MODULE SYLLABUS INSPECTION & PROJECT MODALS
+       ========================================================================= */
+    const MODULE_DETAILS = {
+      1: {
+        title: "Module 1: AI Fundamentals & Mental Models",
+        lessons: [
+          "Lesson 1.1: Generative AI Architecture demystified for creators",
+          "Lesson 1.2: Tool evaluation framework: Picking the right tool for each shot",
+          "Lesson 1.3: Natural language vs. algorithmic prompt weighting architectures"
+        ],
+        takeaway: "Master how diffusion models comprehend tokens, seeds, and aspects without memorizing confusing parameters."
+      },
+      2: {
+        title: "Module 2: AI Image Creation & Photorealism",
+        lessons: [
+          "Lesson 2.1: Midjourney v6 & Flux photorealism formula",
+          "Lesson 2.2: Camera lenses, shutter angles & lighting setups (Chiaroscuro, rim light)",
+          "Lesson 2.3: Mastering Style Reference (--sref) for uniform visual branding",
+          "Lesson 2.4: Generative Fill, inpainting and upscaling secrets"
+        ],
+        takeaway: "Produce imagery indistinguishable from real photographic cinematography."
+      },
+      3: {
+        title: "Module 3: AI Video Generation & Camera Physics",
+        lessons: [
+          "Lesson 3.1: Runway Gen-3 Alpha, Kling AI & Luma Dream Machine workflows",
+          "Lesson 3.2: Precision camera choreography: Pans, pedestal, tracking, crane shots",
+          "Lesson 3.3: Image-to-Video seed locking to prevent object morphing",
+          "Lesson 3.4: Frame rate interpolation and fluid physics simulation"
+        ],
+        takeaway: "Direct realistic camera motions that match high-end Hollywood gimbal setups."
+      },
+      4: {
+        title: "Module 4: Cinematic Storytelling & Script Architectures",
+        lessons: [
+          "Lesson 4.1: Structuring high-impact 30s, 60s, and 90s short narratives",
+          "Lesson 4.2: Script-to-Storyboard automated pipeline with ChatGPT",
+          "Lesson 4.3: Visual continuity and creating emotion with pacing and rhythm"
+        ],
+        takeaway: "Transform simple ideas into structured, compelling screenplay treatments."
+      },
+      5: {
+        title: "Module 5: Character Consistency & Voice Cloning",
+        lessons: [
+          "Lesson 5.1: Midjourney Character Reference (--cref) & multi-angle seed locking",
+          "Lesson 5.2: Face swap integration & micro-expression refinement",
+          "Lesson 5.3: Voice cloning and realistic emotion pacing with ElevenLabs",
+          "Lesson 5.4: Automated lip-syncing synchronization"
+        ],
+        takeaway: "Build proprietary digital characters that stay identical across multiple scenes."
+      },
+      6: {
+        title: "Module 6: Viral Social Content & High-Converting Ads",
+        lessons: [
+          "Lesson 6.1: The 3-second hook framework for TikTok, Reels & Shorts",
+          "Lesson 6.2: 60-Second commercial ad blueprint for physical & luxury brands",
+          "Lesson 6.3: Faceless YouTube automated documentary pipelines",
+          "Lesson 6.4: Rapid vertical editing in CapCut Pro"
+        ],
+        takeaway: "Produce commercial-ready content tailored to maximize view duration and engagement."
+      },
+      7: {
+        title: "Module 7: End-to-End Creative Studio Workflow",
+        lessons: [
+          "Lesson 7.1: Multi-tool integration: Orchestrating 6+ AI tools simultaneously",
+          "Lesson 7.2: AI Foley & cinematic sound synthesis",
+          "Lesson 7.3: Topaz 4K clarification, color grading, and final delivery specs"
+        ],
+        takeaway: "A turnkey production system to assemble complete films in hours instead of weeks."
+      },
+      8: {
+        title: "Module 8: Monetizing AI Skills & Finding Clients",
+        lessons: [
+          "Lesson 8.1: Packaging AI video services for businesses & e-commerce brands",
+          "Lesson 8.2: Portfolio architecture: Building a showreel that closes high-ticket deals",
+          "Lesson 8.3: Client outreach templates, project pricing, and delivery contracts",
+          "Lesson 8.4: Monetizing via YouTube automation and digital assets"
+        ],
+        takeaway: "Turn creative skills into consistent freelance revenue and agency retainer clients."
+      }
+    };
+
+    function toggleModuleDrawer(id) {
+      const mod = MODULE_DETAILS[id];
+      if (!mod) return;
+
+      const content = document.getElementById('module-modal-content');
+      content.innerHTML = `
+        <span class="text-xs font-mono font-bold text-brand-cyan">SYLLABUS BREAKDOWN</span>
+        <h3 class="text-xl font-bold text-white mt-1 mb-3">${mod.title}</h3>
+        <p class="text-xs text-slate-300 mb-4 italic bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+          Core Outcome: ${mod.takeaway}
+        </p>
+        <div class="space-y-2 mb-6">
+          <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Lesson Topics</h4>
+          <ul class="space-y-2 text-xs text-slate-200">
+            ${mod.lessons.map(l => `<li class="flex items-start gap-2"><span class="text-brand-cyan">✦</span><span>${l}</span></li>`).join('')}
+          </ul>
+        </div>
+        <div class="flex gap-3">
+          <a href="#register" onclick="closeModuleModal()" class="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-brand-cyan to-brand-violet text-white font-bold text-xs text-center">
+            Enroll in This Module
+          </a>
+          <button onclick="closeModuleModal()" class="px-4 py-2.5 rounded-xl bg-slate-800 text-slate-300 font-semibold text-xs hover:text-white">
+            Close
+          </button>
+        </div>
+      `;
+      document.getElementById('module-modal').classList.remove('hidden');
+    }
+
+    function closeModuleModal() {
+      document.getElementById('module-modal').classList.add('hidden');
+    }
+
+    const PROJECT_BLUEPRINTS = {
+      1: {
+        title: "Project 1: Cinematic AI Short Film (90 Seconds)",
+        tools: "ChatGPT, Midjourney v6.1, Runway Gen-3, ElevenLabs, CapCut",
+        timeline: "Completed in Module 7 Lab",
+        deliverable: "Complete 90-second 4K short film with narrative dialogue, original sound score, and cinematic title cards.",
+        overview: "You will write, storyboard, prompt, and composite a complete short narrative film. You will learn to maintain visual consistency across 12 distinct camera setups."
+      },
+      2: {
+        title: "Project 2: Original Consistent AI Character",
+        tools: "Midjourney (--cref), InsightFace, Hedra, FaceFusion",
+        timeline: "Completed in Module 5 Lab",
+        deliverable: "10-shot character bible depicting an original protagonist across diverse environments, emotive states, and outfits.",
+        overview: "The gold-standard portfolio piece for clients wanting digital brand ambassadors or ongoing film series protagonists."
+      },
+      3: {
+        title: "Project 3: 60-Second Commercial Brand Ad",
+        tools: "Midjourney, Kling AI, Topaz Video, CapCut Pro",
+        timeline: "Completed in Module 6 Lab",
+        deliverable: "Studio commercial reveal advertisement with dynamic product fly-bys, lighting transitions, and commercial typography.",
+        overview: "High-ticket commercial format that agencies charge $1,500 - $3,000+ to produce for consumer products."
+      },
+      4: {
+        title: "Project 4: Automated Faceless YouTube Video",
+        tools: "ChatGPT, ElevenLabs Voice, Midjourney, Luma Dream",
+        timeline: "Completed in Module 6 Lab",
+        deliverable: "High-retention 3-minute documentary chapter with dynamic zoom-ins, archival visual simulation, and sound design.",
+        overview: "Learn how creators build six-figure faceless video media channels using structured AI storytelling."
+      },
+      5: {
+        title: "Project 5: Viral 5-Part Social Media Campaign",
+        tools: "CapCut, Runway, Auto-Captions, Trending Audio",
+        timeline: "Completed in Module 6 Lab",
+        deliverable: "5 vertical (9:16) video assets engineered around high-retention psychological hooks.",
+        overview: "Master the algorithms of TikTok, Instagram Reels, and YouTube Shorts through high-tempo generative visual hooks."
+      },
+      6: {
+        title: "Project 6: Cinematic Story World & Pitch Deck",
+        tools: "Midjourney, Canva, Prompt Architecture Bible",
+        timeline: "Completed in Module 8 Lab",
+        deliverable: "Full visual IP worldbuilding deck containing 20+ concept art assets, scene descriptions, and client pitch proposal.",
+        overview: "A showpiece portfolio presentation ready to pitch film investors, streaming channels, or brand clients."
+      }
+    };
+
+    function openProjectModal(id) {
+      const p = PROJECT_BLUEPRINTS[id];
+      if (!p) return;
+
+      const container = document.getElementById('project-inspect-content');
+      container.innerHTML = `
+        <span class="text-xs font-mono font-bold text-brand-cyan">PROJECT BLUEPRINT SPECIFICATION</span>
+        <h3 class="text-2xl font-bold text-white mt-1 mb-3">${p.title}</h3>
+        <p class="text-xs text-slate-300 leading-relaxed mb-6">${p.overview}</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800">
+            <span class="text-[11px] font-bold text-slate-400 block mb-1">Tools & Technology</span>
+            <span class="text-xs text-brand-cyan font-medium">${p.tools}</span>
+          </div>
+          <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800">
+            <span class="text-[11px] font-bold text-slate-400 block mb-1">Curriculum Timeline</span>
+            <span class="text-xs text-slate-200 font-medium">${p.timeline}</span>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-brand-cyan/10 border border-brand-cyan/30 mb-6">
+          <span class="text-[11px] font-bold text-brand-cyan uppercase tracking-wider block mb-1">Final Student Deliverable</span>
+          <p class="text-xs text-slate-200 font-medium">${p.deliverable}</p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <a href="#register" onclick="closeProjectModal()" class="flex-1 py-3 rounded-xl bg-gradient-to-r from-brand-cyan to-brand-violet text-white font-bold text-xs text-center shadow-glow-cyan">
+            Enroll & Build This Project
+          </a>
+          <button onclick="closeProjectModal()" class="px-5 py-3 rounded-xl bg-slate-800 text-slate-300 font-semibold text-xs hover:text-white">
+            Back to Projects
+          </button>
+        </div>
+      `;
+      document.getElementById('project-inspect-modal').classList.remove('hidden');
+    }
+
+    function closeProjectModal() {
+      document.getElementById('project-inspect-modal').classList.add('hidden');
+    }
+
+    /* =========================================================================
+       5. FAQ ACCORDION RENDER & TOGGLE
+       ========================================================================= */
+    const FAQ_DATA = [
+      {
+        q: "Do I need previous AI or filmmaking experience to join?",
+        a: "No. AI Creative Studio is built specifically from the ground up to be beginner-friendly. We start with fundamental prompt structures and logic before moving into advanced video cameras and consistent character workflows."
+      },
+      {
+        q: "Do I need to know computer programming or coding?",
+        a: "Absolutely not. Zero coding is required. Every tool we use operates through intuitive web browsers, text prompts, visual interfaces, and timeline editors."
+      },
+      {
+        q: "Do I need an expensive high-end computer or graphics card?",
+        a: "No. Because 95% of modern AI generation takes place in high-performance cloud data centers (Midjourney, Runway, Kling, ElevenLabs), all you need is a standard computer (Mac or Windows) with a reliable internet connection."
+      },
+      {
+        q: "Will I build real projects during the training?",
+        a: "Yes. Every single module requires you to produce a tangible output: from your first photorealistic character to a complete 60-second commercial. You graduate with a finished portfolio."
+      },
+      {
+        q: "Can I use these skills for freelance client work?",
+        a: "Yes. In fact, Module 8 is completely dedicated to packaging, pricing, and pitching AI video services to businesses, agencies, and international clients on Upwork and social channels."
+      },
+      {
+        q: "Will I learn AI video generation, image creation, and storytelling?",
+        a: "Yes. The curriculum covers the complete stack: Scriptwriting (ChatGPT/Claude), Imagery (Midjourney/Flux), Video & Motion (Runway Gen-3/Kling/Veo), Voice Synthesis (ElevenLabs), and Final Editing (CapCut/Premiere)."
+      },
+      {
+        q: "Is the training entirely online?",
+        a: "Yes. The training is conducted fully online with access to live weekend sessions, pre-recorded step-by-step lab walk-throughs, and a 24/7 student community workspace."
+      },
+      {
+        q: "Will I receive a verified certificate?",
+        a: "Students who enroll in the Premium Cohort or 1-on-1 Mentorship and successfully submit their 6 capstone project blueprints receive a verified digital Certificate of Completion."
+      },
+      {
+        q: "Are the AI tools free or paid?",
+        a: "Many tools offer free tiers or trial credits. We guide you on the most budget-effective subscription strategies so you don't spend unnecessary funds on software before you need it."
+      },
+      {
+        q: "What if I get stuck on a lesson or tool error?",
+        a: "You have direct access to our dedicated community channels, instructor Q&A sessions, and prompt troubleshooting guides to solve any roadblock."
+      }
+    ];
+
+    function renderFAQs() {
+      const container = document.getElementById('faq-accordion-container');
+      container.innerHTML = FAQ_DATA.map((item, index) => `
+        <div class="glass-card rounded-xl border border-slate-800 overflow-hidden transition">
+          <button onclick="toggleFaq(${index})" class="w-full px-5 py-4 text-left font-bold text-sm text-slate-100 hover:text-brand-cyan flex items-center justify-between gap-4 transition">
+            <span>${item.q}</span>
+            <svg id="faq-chevron-${index}" class="w-4 h-4 text-brand-cyan transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div id="faq-answer-${index}" class="hidden px-5 pb-4 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-3">
+            ${item.a}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function toggleFaq(index) {
+      const ans = document.getElementById(`faq-answer-${index}`);
+      const chevron = document.getElementById(`faq-chevron-${index}`);
+      const isHidden = ans.classList.contains('hidden');
+
+      // Close all others
+      FAQ_DATA.forEach((_, i) => {
+        const a = document.getElementById(`faq-answer-${i}`);
+        const c = document.getElementById(`faq-chevron-${i}`);
+        if (a && c) {
+          a.classList.add('hidden');
+          c.classList.remove('rotate-180');
+        }
+      });
+
+      if (isHidden) {
+        ans.classList.remove('hidden');
+        chevron.classList.add('rotate-180');
+      }
+    }
+
+    /* =========================================================================
+       6. DYNAMIC TESTIMONIALS & STATS RENDER
+       ========================================================================= */
+    function renderTestimonials() {
+      const container = document.getElementById('testimonials-grid');
+      container.innerHTML = DEFAULT_TESTIMONIALS.map(t => `
+        <div class="glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 mb-3">
+              ${'★'.repeat(t.rating)}
+            </div>
+            <p class="text-xs text-slate-300 italic mb-4 leading-relaxed">"${t.quote}"</p>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center gap-3">
+            <img src="${t.avatar}" alt="${t.name}" class="w-10 h-10 rounded-full object-cover border border-brand-cyan/40" />
+            <div>
+              <h4 class="font-bold text-xs text-white">${t.name}</h4>
+              <span class="text-[11px] text-slate-400 block">${t.role}</span>
+              <span class="text-[10px] text-brand-cyan font-mono">${t.project}</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function applyConfigToUI() {
+      const cfg = appState.config;
+
+      // Stats
+      document.getElementById('stat-students').innerText = cfg.stats.students;
+      document.getElementById('stat-projects').innerText = cfg.stats.projects;
+      document.getElementById('stat-countries').innerText = cfg.stats.countries;
+      document.getElementById('stat-rating').innerText = cfg.stats.rating;
+
+      // Cohort Orientation Date
+      document.getElementById('admissions-cohort-date').innerText = cfg.cohortDate;
+      document.getElementById('footer-contact-email').innerText = cfg.contactEmail;
+      document.getElementById('footer-contact-phone').innerText = '+' + cfg.whatsappPhone;
+
+      // Update pricing display according to currency
+      updatePricingDisplay();
+
+      // Update WhatsApp CTAs
+      updateWhatsAppLinks();
+    }
+
+    function setCurrency(curr) {
+      appState.selectedCurrency = curr;
+      const ngnBtn = document.getElementById('curr-ngn-btn');
+      const usdBtn = document.getElementById('curr-usd-btn');
+
+      if (curr === 'NGN') {
+        ngnBtn.className = "px-4 py-1.5 rounded-lg text-xs font-bold bg-brand-cyan text-slate-950 transition";
+        usdBtn.className = "px-4 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition";
+      } else {
+        usdBtn.className = "px-4 py-1.5 rounded-lg text-xs font-bold bg-brand-cyan text-slate-950 transition";
+        ngnBtn.className = "px-4 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition";
+      }
+
+      updatePricingDisplay();
+    }
+
+    function updatePricingDisplay() {
+      const p = appState.config.pricing;
+      const isNGN = appState.selectedCurrency === 'NGN';
+
+      if (isNGN) {
+        document.getElementById('price-standard-display').innerText = '₦' + Number(p.standardNGN).toLocaleString();
+        document.getElementById('price-premium-display').innerText = '₦' + Number(p.premiumNGN).toLocaleString();
+        document.getElementById('price-vip-display').innerText = '₦' + Number(p.vipNGN).toLocaleString();
+      } else {
+        document.getElementById('price-standard-display').innerText = '$' + p.standardUSD;
+        document.getElementById('price-premium-display').innerText = '$' + p.premiumUSD;
+        document.getElementById('price-vip-display').innerText = '$' + p.vipUSD;
+      }
+    }
+
+    function updateWhatsAppLinks() {
+      const phone = appState.config.whatsappPhone;
+      const defaultMsg = encodeURIComponent("Hello AI Creative Studio admissions, I am interested in joining the upcoming class. Please send me more information!");
+
+      const fullUrl = `https://wa.me/${phone}?text=${defaultMsg}`;
+
+      const floatingPill = document.getElementById('floating-whatsapp-pill');
+      if (floatingPill) floatingPill.href = fullUrl;
+
+      const finalBtn = document.getElementById('final-whatsapp-btn');
+      if (finalBtn) finalBtn.href = fullUrl;
+    }
+
+    /* =========================================================================
+       7. REGISTRATION & LEAD CAPTURE HANDLERS
+       ========================================================================= */
+    function selectPlanAndRegister(planName) {
+      document.getElementById('form-selected-plan-text').innerText = planName;
+      document.getElementById('reg-plan-input').value = planName;
+
+      const target = document.getElementById('register');
+      target.scrollIntoView({ behavior: 'smooth' });
+
+      showToast(`Selected "${planName}" plan. Please complete your registration details.`, 'info');
+    }
+
+    function handleRegistrationSubmit(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('reg-name').value.trim();
+      const email = document.getElementById('reg-email').value.trim();
+      const whatsapp = document.getElementById('reg-whatsapp').value.trim();
+      const country = document.getElementById('reg-country').value.trim();
+      const profession = document.getElementById('reg-profession').value.trim();
+      const experience = document.getElementById('reg-experience').value;
+      const goal = document.getElementById('reg-goal').value;
+      const format = document.getElementById('reg-format').value;
+      const source = document.getElementById('reg-source').value;
+      const plan = document.getElementById('reg-plan-input').value;
+
+      if (!name || !email || !whatsapp) {
+        showToast("Please complete all required fields.", "error");
+        return;
+      }
+
+      const newRegistration = {
+        id: 'REG_' + Date.now(),
+        name,
+        email,
+        whatsapp,
+        country,
+        profession,
+        experience,
+        goal,
+        format,
+        source,
+        plan,
+        createdAt: new Date().toISOString()
+      };
+
+      appState.registrations.unshift(newRegistration);
+      localStorage.setItem('ai_studio_students', JSON.stringify(appState.registrations));
+
+      // Show confirmation dialog with direct personalized WhatsApp link
+      document.getElementById('success-modal-name').innerText = name;
+      document.getElementById('success-modal-plan').innerText = plan;
+      document.getElementById('success-modal-cohort').innerText = appState.config.cohortDate;
+
+      const customMsg = encodeURIComponent(
+        `Hello AI Creative Studio, I just submitted my registration for ${plan}!\nName: ${name}\nEmail: ${email}\nGoal: ${goal}`
+      );
+      document.getElementById('success-whatsapp-link').href = `https://wa.me/${appState.config.whatsappPhone}?text=${customMsg}`;
+
+      document.getElementById('registration-success-modal').classList.remove('hidden');
+
+      // Reset Form
+      document.getElementById('registration-form').reset();
+      showToast("Registration submitted successfully!", "success");
+
+      // Refresh Admin stats if viewing
+      renderAdminData();
+    }
+
+    function closeSuccessModal() {
+      document.getElementById('registration-success-modal').classList.add('hidden');
+    }
+
+    function handleLeadSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('lead-name').value.trim();
+      const email = document.getElementById('lead-email').value.trim();
+      const whatsapp = document.getElementById('lead-whatsapp').value.trim();
+
+      if (!name || !email) {
+        showToast("Please provide your name and email.", "error");
+        return;
+      }
+
+      const lead = {
+        id: 'LEAD_' + Date.now(),
+        name,
+        email,
+        whatsapp: whatsapp || 'N/A',
+        createdAt: new Date().toISOString()
+      };
+
+      appState.leads.unshift(lead);
+      localStorage.setItem('ai_studio_leads', JSON.stringify(appState.leads));
+
+      document.getElementById('lead-form').reset();
+      showToast("Awesome! The Prompt Toolkit has been dispatched to your email.", "success");
+      renderAdminData();
+    }
+
+    /* =========================================================================
+       8. ADMIN MANAGEMENT PORTAL (PROTECTED)
+       ========================================================================= */
+    function toggleAdminModal() {
+      const modal = document.getElementById('admin-modal');
+      const isHidden = modal.classList.contains('hidden');
+
+      if (isHidden) {
+        modal.classList.remove('hidden');
+        if (appState.isAdminAuthenticated) {
+          showAdminDashboard();
+        } else {
+          document.getElementById('admin-auth-screen').classList.remove('hidden');
+          document.getElementById('admin-dashboard-view').classList.add('hidden');
+        }
+      } else {
+        modal.classList.add('hidden');
+      }
+    }
+
+    function handleAdminAuth(e) {
+      e.preventDefault();
+      const pin = document.getElementById('admin-pin-input').value;
+      if (pin === 'admin123' || pin === 'studio2026') {
+        appState.isAdminAuthenticated = true;
+        showToast("Authentication successful. Welcome Admin.", "success");
+        showAdminDashboard();
+      } else {
+        showToast("Invalid password key. (Use 'admin123')", "error");
+      }
+    }
+
+    function showAdminDashboard() {
+      document.getElementById('admin-auth-screen').classList.add('hidden');
+      document.getElementById('admin-dashboard-view').classList.remove('hidden');
+      renderAdminData();
+      populateAdminSettingsForm();
+    }
+
+    function switchAdminTab(tabName) {
+      const tabs = ['registrations', 'leads', 'settings'];
+      tabs.forEach(t => {
+        const btn = document.getElementById(`tab-btn-${t}`);
+        const view = document.getElementById(`admin-tab-${t}`);
+        if (t === tabName) {
+          btn.className = "px-3 py-1.5 rounded-lg text-xs font-semibold bg-brand-cyan text-slate-950 transition";
+          view.classList.remove('hidden');
+        } else {
+          btn.className = "px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition";
+          view.classList.add('hidden');
+        }
+      });
+    }
+
+    function renderAdminData() {
+      const regList = appState.registrations;
+      const leadList = appState.leads;
+
+      // KPIs
+      document.getElementById('kpi-total-reg').innerText = regList.length;
+      document.getElementById('kpi-total-leads').innerText = leadList.length;
+      document.getElementById('kpi-cohort-date').innerText = appState.config.cohortDate;
+
+      // Estimated Revenue in NGN
+      const rev = regList.reduce((acc, curr) => {
+        if (curr.plan.includes('VIP')) return acc + appState.config.pricing.vipNGN;
+        if (curr.plan.includes('Premium')) return acc + appState.config.pricing.premiumNGN;
+        return acc + appState.config.pricing.standardNGN;
+      }, 0);
+      document.getElementById('kpi-est-revenue').innerText = '₦' + rev.toLocaleString();
+
+      // Registrations table
+      renderRegistrationsTable(regList);
+
+      // Leads table
+      const leadsBody = document.getElementById('admin-leads-tbody');
+      if (leadList.length === 0) {
+        leadsBody.innerHTML = `<tr><td colspan="4" class="px-4 py-6 text-center text-slate-500">No lead submissions yet.</td></tr>`;
+      } else {
+        leadsBody.innerHTML = leadList.map(l => `
+          <tr class="hover:bg-slate-900/50">
+            <td class="px-4 py-2.5 text-slate-400 font-mono">${new Date(l.createdAt).toLocaleDateString()}</td>
+            <td class="px-4 py-2.5 font-bold text-white">${escapeHtml(l.name)}</td>
+            <td class="px-4 py-2.5 text-slate-300">${escapeHtml(l.email)}</td>
+            <td class="px-4 py-2.5 text-brand-cyan font-mono">${escapeHtml(l.whatsapp)}</td>
+          </tr>
+        `).join('');
+      }
+    }
+
+    function renderRegistrationsTable(list) {
+      const tbody = document.getElementById('admin-registrations-tbody');
+      if (list.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" class="px-4 py-8 text-center text-slate-500">No student registrations recorded yet. Click "+ Load Sample Students" above to test.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = list.map(r => `
+        <tr class="hover:bg-slate-900/50">
+          <td class="px-4 py-2.5 text-[11px] text-slate-400 font-mono">${new Date(r.createdAt).toLocaleDateString()}</td>
+          <td class="px-4 py-2.5">
+            <div class="font-bold text-white">${escapeHtml(r.name)}</div>
+            <div class="text-[11px] text-slate-400">${escapeHtml(r.email)} • <span class="text-slate-300">${escapeHtml(r.country)}</span></div>
+          </td>
+          <td class="px-4 py-2.5">
+            <a href="https://wa.me/${r.whatsapp.replace(/[^0-9]/g, '')}" target="_blank" class="text-brand-cyan hover:underline font-mono">
+              ${escapeHtml(r.whatsapp)}
+            </a>
+          </td>
+          <td class="px-4 py-2.5">
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold ${r.plan.includes('Premium') ? 'bg-brand-cyan/20 text-brand-cyan border border-brand-cyan/40' : r.plan.includes('VIP') ? 'bg-purple-500/20 text-purple-300 border border-purple-500/40' : 'bg-slate-800 text-slate-300'}">
+              ${escapeHtml(r.plan)}
+            </span>
+          </td>
+          <td class="px-4 py-2.5 text-[11px] text-slate-300 truncate max-w-[140px]">${escapeHtml(r.goal)}</td>
+          <td class="px-4 py-2.5">
+            <button onclick="deleteRegistration('${r.id}')" class="text-red-400 hover:text-red-300 text-xs" title="Delete record">
+              Delete
+            </button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function filterRegistrations() {
+      const search = document.getElementById('admin-search-input').value.toLowerCase();
+      const planFilter = document.getElementById('admin-filter-plan').value;
+
+      const filtered = appState.registrations.filter(r => {
+        const matchesSearch = r.name.toLowerCase().includes(search) || 
+                              r.email.toLowerCase().includes(search) ||
+                              r.country.toLowerCase().includes(search);
+        const matchesPlan = !planFilter || r.plan.includes(planFilter);
+        return matchesSearch && matchesPlan;
+      });
+
+      renderRegistrationsTable(filtered);
+    }
+
+    function deleteRegistration(id) {
+      // In-app modal replacement instead of browser confirm()
+      appState.registrations = appState.registrations.filter(r => r.id !== id);
+      localStorage.setItem('ai_studio_students', JSON.stringify(appState.registrations));
+      showToast("Student registration deleted.", "info");
+      renderAdminData();
+    }
+
+    function populateAdminSettingsForm() {
+      const cfg = appState.config;
+      document.getElementById('set-price-standard').value = cfg.pricing.standardNGN;
+      document.getElementById('set-price-premium').value = cfg.pricing.premiumNGN;
+      document.getElementById('set-price-vip').value = cfg.pricing.vipNGN;
+      document.getElementById('set-whatsapp-phone').value = cfg.whatsappPhone;
+      document.getElementById('set-contact-email').value = cfg.contactEmail;
+      document.getElementById('set-cohort-date').value = cfg.cohortDate;
+      document.getElementById('set-stat-students').value = cfg.stats.students;
+      document.getElementById('set-stat-projects').value = cfg.stats.projects;
+      document.getElementById('set-stat-countries').value = cfg.stats.countries;
+      document.getElementById('set-stat-rating').value = cfg.stats.rating;
+    }
+
+    function saveAdminSettings(e) {
+      e.preventDefault();
+
+      appState.config.pricing.standardNGN = Number(document.getElementById('set-price-standard').value) || 45000;
+      appState.config.pricing.premiumNGN = Number(document.getElementById('set-price-premium').value) || 85000;
+      appState.config.pricing.vipNGN = Number(document.getElementById('set-price-vip').value) || 250000;
+
+      appState.config.whatsappPhone = document.getElementById('set-whatsapp-phone').value.trim();
+      appState.config.contactEmail = document.getElementById('set-contact-email').value.trim();
+      appState.config.cohortDate = document.getElementById('set-cohort-date').value.trim();
+
+      appState.config.stats.students = document.getElementById('set-stat-students').value.trim();
+      appState.config.stats.projects = document.getElementById('set-stat-projects').value.trim();
+      appState.config.stats.countries = document.getElementById('set-stat-countries').value.trim();
+      appState.config.stats.rating = document.getElementById('set-stat-rating').value.trim();
+
+      localStorage.setItem('ai_studio_config', JSON.stringify(appState.config));
+      applyConfigToUI();
+      renderAdminData();
+      showToast("Admin settings updated and applied to live website!", "success");
+    }
+
+    function seedDemoStudents() {
+      const sample = [
+        {
+          id: 'REG_DEMO_1',
+          name: 'Emmanuel Okafor',
+          email: 'emmanuel@mediaworks.ng',
+          whatsapp: '+234 803 111 2233',
+          country: 'Nigeria',
+          profession: 'Video Editor',
+          experience: 'Intermediate',
+          goal: 'AI Video Creation',
+          format: 'Live Weekend Cohort',
+          source: 'Instagram',
+          plan: 'Premium Cohort',
+          createdAt: new Date().toISOString()
+        },
+        {
+          id: 'REG_DEMO_2',
+          name: 'Aisha Bello',
+          email: 'aisha@brandcraft.com',
+          whatsapp: '+234 814 555 7788',
+          country: 'Nigeria',
+          profession: 'Social Media Manager',
+          experience: 'Beginner',
+          goal: 'Business & Social Ads',
+          format: 'Hybrid Flexible',
+          source: 'Twitter / X',
+          plan: 'Standard Class',
+          createdAt: new Date(Date.now() - 86400000).toISOString()
+        },
+        {
+          id: 'REG_DEMO_3',
+          name: 'David Van Der Merwe',
+          email: 'david@capecreatives.co.za',
+          whatsapp: '+27 82 999 1234',
+          country: 'South Africa',
+          profession: 'Agency Director',
+          experience: 'Intermediate',
+          goal: 'Master Everything',
+          format: 'Live Weekend Cohort',
+          source: 'Friend Referral',
+          plan: 'VIP Mentorship',
+          createdAt: new Date(Date.now() - 172800000).toISOString()
+        }
+      ];
+
+      appState.registrations = [...sample, ...appState.registrations];
+      localStorage.setItem('ai_studio_students', JSON.stringify(appState.registrations));
+      renderAdminData();
+      showToast("Sample students loaded into database table.", "success");
+    }
+
+    /* =========================================================================
+       9. CSV EXPORTERS (Data persistence convenience)
+       ========================================================================= */
+    function exportRegistrationsCSV() {
+      if (appState.registrations.length === 0) {
+        showToast("No registrations to export.", "error");
+        return;
+      }
+      const headers = ["ID", "Name", "Email", "WhatsApp", "Country", "Profession", "Experience", "Goal", "Plan", "Date"];
+      const rows = appState.registrations.map(r => [
+        r.id,
+        `"${r.name.replace(/"/g, '""')}"`,
+        r.email,
+        r.whatsapp,
+        r.country,
+        `"${r.profession.replace(/"/g, '""')}"`,
+        r.experience,
+        `"${r.goal.replace(/"/g, '""')}"`,
+        r.plan,
+        r.createdAt
+      ]);
+
+      const csvContent = "data:text/csv;charset=utf-8," + [headers.join(','), ...rows.map(e => e.join(','))].join('\n');
+      const encodedUri = encodeURI(csvContent);
+      const link = document.createElement("a");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", `ai_creative_studio_students_${Date.now()}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      showToast("Exported students to CSV file!", "success");
+    }
+
+    function exportLeadsCSV() {
+      if (appState.leads.length === 0) {
+        showToast("No leads to export.", "error");
+        return;
+      }
+      const headers = ["ID", "Name", "Email", "WhatsApp", "Date"];
+      const rows = appState.leads.map(l => [
+        l.id,
+        `"${l.name.replace(/"/g, '""')}"`,
+        l.email,
+        l.whatsapp,
+        l.createdAt
+      ]);
+
+      const csvContent = "data:text/csv;charset=utf-8," + [headers.join(','), ...rows.map(e => e.join(','))].join('\n');
+      const encodedUri = encodeURI(csvContent);
+      const link = document.createElement("a");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", `ai_creative_studio_leads_${Date.now()}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      showToast("Exported leads to CSV file!", "success");
+    }
+
+    /* =========================================================================
+       10. UTILITIES, TOASTS & MOBILE DRAWER
+       ========================================================================= */
+    function showToast(message, type = 'info') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      const colors = {
+        success: 'bg-emerald-950 border-emerald-500 text-emerald-200',
+        error: 'bg-red-950 border-red-500 text-red-200',
+        info: 'bg-[#0f172a] border-brand-cyan text-cyan-200'
+      };
+
+      toast.className = `px-4 py-3 rounded-xl border shadow-xl text-xs font-medium flex items-center gap-2 pointer-events-auto transition-all transform duration-300 translate-y-2 opacity-0 ${colors[type] || colors.info}`;
+      toast.innerHTML = `
+        <span class="w-2 h-2 rounded-full ${type === 'success' ? 'bg-emerald-400' : type === 'error' ? 'bg-red-400' : 'bg-brand-cyan'}"></span>
+        <span>${message}</span>
+      `;
+      container.appendChild(toast);
+
+      requestAnimationFrame(() => {
+        toast.classList.remove('translate-y-2', 'opacity-0');
+      });
+
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-x-4');
+        setTimeout(() => toast.remove(), 300);
+      }, 4000);
+    }
+
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobile-drawer');
+      drawer.classList.toggle('hidden');
+    }
+
+    function closeMobileMenu() {
+      document.getElementById('mobile-drawer').classList.add('hidden');
+    }
+
+    function escapeHtml(string) {
+      if (!string) return '';
+      return String(string)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    /* =========================================================================
+       11. LIFECYCLE INITIALIZATION ON DOM LOAD
+       ========================================================================= */
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. Initial workflow stage render
+      setWorkflowStep(1);
+
+      // 2. FAQs & Testimonials
+      renderFAQs();
+      renderTestimonials();
+
+      // 3. UI and Config Bindings
+      applyConfigToUI();
+
+      // 4. Navbar scroll elevation effect
+      window.addEventListener('scroll', () => {
+        const header = document.getElementById('main-header');
+        if (window.scrollY > 50) {
+          header.classList.add('bg-[#07090e]/95', 'shadow-lg');
+        } else {
+          header.classList.remove('shadow-lg');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
